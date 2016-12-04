@@ -28,6 +28,8 @@
 		45CABC5E1DF3AF51000207D0 /* Main1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CABC5D1DF3AF51000207D0 /* Main1VC.swift */; };
 		45CABC601DF3B090000207D0 /* RoundedProfilePic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CABC5F1DF3B090000207D0 /* RoundedProfilePic.swift */; };
 		45CABC621DF3B160000207D0 /* smile.png in Resources */ = {isa = PBXBuildFile; fileRef = 45CABC611DF3B160000207D0 /* smile.png */; };
+		45CABC641DF3F611000207D0 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 45CABC631DF3F611000207D0 /* bg.png */; };
+		45CABC661DF3F8AB000207D0 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CABC651DF3F8AB000207D0 /* UserCell.swift */; };
 		61FF848C8D59DB2054D3647E /* Pods_Find_Some_Friends.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 979DB6753B055A3CFC018D22 /* Pods_Find_Some_Friends.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +57,8 @@
 		45CABC5D1DF3AF51000207D0 /* Main1VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Main1VC.swift; sourceTree = "<group>"; };
 		45CABC5F1DF3B090000207D0 /* RoundedProfilePic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedProfilePic.swift; sourceTree = "<group>"; };
 		45CABC611DF3B160000207D0 /* smile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smile.png; sourceTree = "<group>"; };
+		45CABC631DF3F611000207D0 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
+		45CABC651DF3F8AB000207D0 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		979DB6753B055A3CFC018D22 /* Pods_Find_Some_Friends.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Find_Some_Friends.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2188F0273215344FB78EB9F /* Pods-Find Some Friends.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find Some Friends.release.xcconfig"; path = "Pods/Target Support Files/Pods-Find Some Friends/Pods-Find Some Friends.release.xcconfig"; sourceTree = "<group>"; };
 		C91877CC7E61B42C99171CC8 /* Pods-Find Some Friends.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find Some Friends.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Find Some Friends/Pods-Find Some Friends.debug.xcconfig"; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 		45CABC401DF38DC0000207D0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				45CABC651DF3F8AB000207D0 /* UserCell.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -139,6 +144,7 @@
 			children = (
 				45CABC611DF3B160000207D0 /* smile.png */,
 				45CABC551DF39516000207D0 /* mail.png */,
+				45CABC631DF3F611000207D0 /* bg.png */,
 				45CABC571DF39520000207D0 /* closed-lock.png */,
 				45CABC531DF394DE000207D0 /* mail-black-envelope-symbol.png */,
 				45CABC511DF39477000207D0 /* padlock.png */,
@@ -241,6 +247,7 @@
 			files = (
 				45CABC581DF39520000207D0 /* closed-lock.png in Resources */,
 				45CABC5A1DF39CDC000207D0 /* GoogleService-Info.plist in Resources */,
+				45CABC641DF3F611000207D0 /* bg.png in Resources */,
 				45CABC4A1DF38ED8000207D0 /* NotoSans-Regular.ttf in Resources */,
 				45CABC371DF38B6C000207D0 /* LaunchScreen.storyboard in Resources */,
 				45CABC561DF39516000207D0 /* mail.png in Resources */,
@@ -318,6 +325,7 @@
 				45CABC2F1DF38B6C000207D0 /* LoginVC.swift in Sources */,
 				45CABC5E1DF3AF51000207D0 /* Main1VC.swift in Sources */,
 				45CABC2D1DF38B6C000207D0 /* AppDelegate.swift in Sources */,
+				45CABC661DF3F8AB000207D0 /* UserCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
