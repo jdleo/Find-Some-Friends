@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginVC: UIViewController {
     
@@ -41,6 +42,19 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func loginAction(_ sender: AnyObject) {
+        if let email = emailField.text, let password = passwordField.text {
+            FIRAuth.auth()?.signIn(withEmail: email, password: password) { (user, error) in
+                if error != nil {
+                    //success
+                    
+                } else {
+                    //there's an error
+                }
+            }
+            
+        } else {
+            //doesnt have both fields filled out
+        }
     }
     
 
