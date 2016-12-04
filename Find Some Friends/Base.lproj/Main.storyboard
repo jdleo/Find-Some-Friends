@@ -85,6 +85,9 @@
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="YES"/>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="loginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1zz-gy-ZLY"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.10980392160000001" green="0.72549019609999998" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -119,6 +122,11 @@
                             <constraint firstAttribute="trailing" secondItem="DWc-ZZ-kaO" secondAttribute="trailing" id="xUU-Xy-yy1"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="rD1-bV-sbs" id="gcN-Qv-Vlt"/>
+                        <outlet property="loginBtn" destination="Vpr-Ps-VOf" id="CN1-Yq-Zef"/>
+                        <outlet property="passwordField" destination="qg2-qk-735" id="Pct-mr-uOB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
