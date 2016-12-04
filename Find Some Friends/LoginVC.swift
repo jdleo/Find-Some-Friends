@@ -9,10 +9,22 @@
 import UIKit
 
 class LoginVC: UIViewController {
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+        if launchedBefore  {
+            print("Not the first launch")
+        } else {
+            
+            print("First launch, displaying welcome message")
+            
+            UserDefaults.standard.set(true, forKey: "launchedBefore")
+        
+        }
     }
 
     override func didReceiveMemoryWarning() {

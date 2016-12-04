@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansUI-Regular.ttf">
+            <string>NotoSansUI</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--LoginVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginVC" customModule="Find_Some_Friends" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +22,112 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DWc-ZZ-kaO">
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FSFBanner.png" translatesAutoresizingMaskIntoConstraints="NO" id="Cwn-Ir-oHU">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="68" id="w8k-wj-Llc"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login / Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ivn-NJ-NgV">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="31" id="SlI-ka-DvB"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NotoSansUI" family="Noto Sans UI" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ioR-P0-BS4">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="2" id="QeO-SS-1H6"/>
+                                        </constraints>
+                                    </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mail.png" translatesAutoresizingMaskIntoConstraints="NO" id="kHu-C4-kqp">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="B7Q-U6-YJe"/>
+                                            <constraint firstAttribute="width" constant="35" id="xi7-KY-Xvc"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="closed-lock.png" translatesAutoresizingMaskIntoConstraints="NO" id="PTV-8k-dhY">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="35" id="JRD-5J-CDW"/>
+                                            <constraint firstAttribute="height" constant="35" id="v9f-VF-vaM"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rD1-bV-sbs">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="x0O-Ta-yTx"/>
+                                        </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="NotoSansUI" family="Noto Sans UI" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qg2-qk-735">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="WxD-8a-zf0"/>
+                                        </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="NotoSansUI" family="Noto Sans UI" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vpr-Ps-VOf">
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="123" id="60n-lV-CHa"/>
+                                            <constraint firstAttribute="height" constant="44" id="Bg1-as-mkW"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NotoSansUI" family="Noto Sans UI" pointSize="26"/>
+                                        <state key="normal" title="Log In">
+                                            <color key="titleColor" red="0.10980392160000001" green="0.72549019609999998" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.10980392160000001" green="0.72549019609999998" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="ioR-P0-BS4" firstAttribute="leading" secondItem="DWc-ZZ-kaO" secondAttribute="leading" id="1GJ-rG-4wW"/>
+                                    <constraint firstItem="PTV-8k-dhY" firstAttribute="leading" secondItem="DWc-ZZ-kaO" secondAttribute="leading" constant="8" id="6T2-dK-K8F"/>
+                                    <constraint firstItem="ivn-NJ-NgV" firstAttribute="top" secondItem="Cwn-Ir-oHU" secondAttribute="bottom" constant="55" id="ADe-Sp-NgB"/>
+                                    <constraint firstItem="qg2-qk-735" firstAttribute="top" secondItem="ioR-P0-BS4" secondAttribute="bottom" constant="5" id="Bte-NJ-2K5"/>
+                                    <constraint firstAttribute="trailing" secondItem="qg2-qk-735" secondAttribute="trailing" id="CWf-FF-3QR"/>
+                                    <constraint firstItem="Cwn-Ir-oHU" firstAttribute="centerX" secondItem="DWc-ZZ-kaO" secondAttribute="centerX" id="F0t-1Q-iTY"/>
+                                    <constraint firstAttribute="trailing" secondItem="ioR-P0-BS4" secondAttribute="trailing" id="HtY-qu-pI4"/>
+                                    <constraint firstItem="ivn-NJ-NgV" firstAttribute="centerX" secondItem="DWc-ZZ-kaO" secondAttribute="centerX" id="IKa-1z-NxI"/>
+                                    <constraint firstItem="Cwn-Ir-oHU" firstAttribute="top" secondItem="DWc-ZZ-kaO" secondAttribute="top" constant="24" id="Jjj-hn-mAb"/>
+                                    <constraint firstItem="ioR-P0-BS4" firstAttribute="top" secondItem="kHu-C4-kqp" secondAttribute="bottom" constant="5" id="SAs-Zx-1MA"/>
+                                    <constraint firstItem="qg2-qk-735" firstAttribute="leading" secondItem="PTV-8k-dhY" secondAttribute="trailing" constant="10" id="SpY-hI-w3i"/>
+                                    <constraint firstItem="Vpr-Ps-VOf" firstAttribute="top" secondItem="qg2-qk-735" secondAttribute="bottom" constant="55" id="Udb-Iw-tZt"/>
+                                    <constraint firstItem="PTV-8k-dhY" firstAttribute="top" secondItem="ioR-P0-BS4" secondAttribute="bottom" constant="5" id="bUL-tw-nrW"/>
+                                    <constraint firstAttribute="trailing" secondItem="rD1-bV-sbs" secondAttribute="trailing" id="g0S-s9-Pqs"/>
+                                    <constraint firstItem="ioR-P0-BS4" firstAttribute="top" secondItem="rD1-bV-sbs" secondAttribute="bottom" constant="5" id="l7A-xw-USg"/>
+                                    <constraint firstItem="Vpr-Ps-VOf" firstAttribute="centerX" secondItem="DWc-ZZ-kaO" secondAttribute="centerX" id="lQD-au-i8Z"/>
+                                    <constraint firstItem="ioR-P0-BS4" firstAttribute="top" secondItem="ivn-NJ-NgV" secondAttribute="bottom" constant="100" id="wg8-nY-br1"/>
+                                    <constraint firstItem="kHu-C4-kqp" firstAttribute="leading" secondItem="DWc-ZZ-kaO" secondAttribute="leading" constant="8" id="zAr-LL-4Us"/>
+                                    <constraint firstItem="rD1-bV-sbs" firstAttribute="leading" secondItem="kHu-C4-kqp" secondAttribute="trailing" constant="10" id="zba-QF-ECq"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="DWc-ZZ-kaO" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="H7t-x0-xPi"/>
+                            <constraint firstItem="DWc-ZZ-kaO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Uam-aM-XxA"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="DWc-ZZ-kaO" secondAttribute="bottom" id="rkO-XH-ua8"/>
+                            <constraint firstAttribute="trailing" secondItem="DWc-ZZ-kaO" secondAttribute="trailing" id="xUU-Xy-yy1"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="34.399999999999999" y="34.632683658170919"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="FSFBanner.png" width="944" height="186"/>
+        <image name="closed-lock.png" width="64" height="64"/>
+        <image name="mail.png" width="64" height="64"/>
+    </resources>
 </document>

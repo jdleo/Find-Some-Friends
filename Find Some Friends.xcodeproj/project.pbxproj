@@ -12,6 +12,17 @@
 		45CABC321DF38B6C000207D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45CABC301DF38B6C000207D0 /* Main.storyboard */; };
 		45CABC341DF38B6C000207D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45CABC331DF38B6C000207D0 /* Assets.xcassets */; };
 		45CABC371DF38B6C000207D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45CABC351DF38B6C000207D0 /* LaunchScreen.storyboard */; };
+		45CABC3F1DF38DB5000207D0 /* people.png in Resources */ = {isa = PBXBuildFile; fileRef = 45CABC3E1DF38DB5000207D0 /* people.png */; };
+		45CABC491DF38ED8000207D0 /* NotoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 45CABC451DF38ED8000207D0 /* NotoSans-Bold.ttf */; };
+		45CABC4A1DF38ED8000207D0 /* NotoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 45CABC461DF38ED8000207D0 /* NotoSans-Regular.ttf */; };
+		45CABC4B1DF38ED8000207D0 /* NotoSansUI-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 45CABC471DF38ED8000207D0 /* NotoSansUI-Bold.ttf */; };
+		45CABC4C1DF38ED8000207D0 /* NotoSansUI-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 45CABC481DF38ED8000207D0 /* NotoSansUI-Regular.ttf */; };
+		45CABC4E1DF390E4000207D0 /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CABC4D1DF390E4000207D0 /* MaterialView.swift */; };
+		45CABC501DF392F7000207D0 /* FSFBanner.png in Resources */ = {isa = PBXBuildFile; fileRef = 45CABC4F1DF392F7000207D0 /* FSFBanner.png */; };
+		45CABC521DF39477000207D0 /* padlock.png in Resources */ = {isa = PBXBuildFile; fileRef = 45CABC511DF39477000207D0 /* padlock.png */; };
+		45CABC541DF394DE000207D0 /* mail-black-envelope-symbol.png in Resources */ = {isa = PBXBuildFile; fileRef = 45CABC531DF394DE000207D0 /* mail-black-envelope-symbol.png */; };
+		45CABC561DF39516000207D0 /* mail.png in Resources */ = {isa = PBXBuildFile; fileRef = 45CABC551DF39516000207D0 /* mail.png */; };
+		45CABC581DF39520000207D0 /* closed-lock.png in Resources */ = {isa = PBXBuildFile; fileRef = 45CABC571DF39520000207D0 /* closed-lock.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +33,17 @@
 		45CABC331DF38B6C000207D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45CABC361DF38B6C000207D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		45CABC381DF38B6C000207D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45CABC3E1DF38DB5000207D0 /* people.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = people.png; sourceTree = "<group>"; };
+		45CABC451DF38ED8000207D0 /* NotoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Bold.ttf"; sourceTree = "<group>"; };
+		45CABC461DF38ED8000207D0 /* NotoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Regular.ttf"; sourceTree = "<group>"; };
+		45CABC471DF38ED8000207D0 /* NotoSansUI-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansUI-Bold.ttf"; sourceTree = "<group>"; };
+		45CABC481DF38ED8000207D0 /* NotoSansUI-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansUI-Regular.ttf"; sourceTree = "<group>"; };
+		45CABC4D1DF390E4000207D0 /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
+		45CABC4F1DF392F7000207D0 /* FSFBanner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FSFBanner.png; sourceTree = "<group>"; };
+		45CABC511DF39477000207D0 /* padlock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = padlock.png; sourceTree = "<group>"; };
+		45CABC531DF394DE000207D0 /* mail-black-envelope-symbol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mail-black-envelope-symbol.png"; sourceTree = "<group>"; };
+		45CABC551DF39516000207D0 /* mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mail.png; sourceTree = "<group>"; };
+		45CABC571DF39520000207D0 /* closed-lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "closed-lock.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +76,65 @@
 		45CABC2B1DF38B6C000207D0 /* Find Some Friends */ = {
 			isa = PBXGroup;
 			children = (
+				45CABC441DF38EAC000207D0 /* Fonts */,
+				45CABC431DF38DD0000207D0 /* Images */,
+				45CABC421DF38DCA000207D0 /* Controller */,
+				45CABC411DF38DC5000207D0 /* View */,
+				45CABC401DF38DC0000207D0 /* Model */,
 				45CABC2C1DF38B6C000207D0 /* AppDelegate.swift */,
-				45CABC2E1DF38B6C000207D0 /* LoginVC.swift */,
 				45CABC301DF38B6C000207D0 /* Main.storyboard */,
 				45CABC331DF38B6C000207D0 /* Assets.xcassets */,
 				45CABC351DF38B6C000207D0 /* LaunchScreen.storyboard */,
 				45CABC381DF38B6C000207D0 /* Info.plist */,
 			);
 			path = "Find Some Friends";
+			sourceTree = "<group>";
+		};
+		45CABC401DF38DC0000207D0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		45CABC411DF38DC5000207D0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				45CABC4D1DF390E4000207D0 /* MaterialView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		45CABC421DF38DCA000207D0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				45CABC2E1DF38B6C000207D0 /* LoginVC.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		45CABC431DF38DD0000207D0 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				45CABC551DF39516000207D0 /* mail.png */,
+				45CABC571DF39520000207D0 /* closed-lock.png */,
+				45CABC531DF394DE000207D0 /* mail-black-envelope-symbol.png */,
+				45CABC511DF39477000207D0 /* padlock.png */,
+				45CABC4F1DF392F7000207D0 /* FSFBanner.png */,
+				45CABC3E1DF38DB5000207D0 /* people.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		45CABC441DF38EAC000207D0 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				45CABC451DF38ED8000207D0 /* NotoSans-Bold.ttf */,
+				45CABC461DF38ED8000207D0 /* NotoSans-Regular.ttf */,
+				45CABC471DF38ED8000207D0 /* NotoSansUI-Bold.ttf */,
+				45CABC481DF38ED8000207D0 /* NotoSansUI-Regular.ttf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,8 +197,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45CABC581DF39520000207D0 /* closed-lock.png in Resources */,
+				45CABC4A1DF38ED8000207D0 /* NotoSans-Regular.ttf in Resources */,
 				45CABC371DF38B6C000207D0 /* LaunchScreen.storyboard in Resources */,
+				45CABC561DF39516000207D0 /* mail.png in Resources */,
 				45CABC341DF38B6C000207D0 /* Assets.xcassets in Resources */,
+				45CABC541DF394DE000207D0 /* mail-black-envelope-symbol.png in Resources */,
+				45CABC4B1DF38ED8000207D0 /* NotoSansUI-Bold.ttf in Resources */,
+				45CABC521DF39477000207D0 /* padlock.png in Resources */,
+				45CABC501DF392F7000207D0 /* FSFBanner.png in Resources */,
+				45CABC4C1DF38ED8000207D0 /* NotoSansUI-Regular.ttf in Resources */,
+				45CABC3F1DF38DB5000207D0 /* people.png in Resources */,
+				45CABC491DF38ED8000207D0 /* NotoSans-Bold.ttf in Resources */,
 				45CABC321DF38B6C000207D0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45CABC4E1DF390E4000207D0 /* MaterialView.swift in Sources */,
 				45CABC2F1DF38B6C000207D0 /* LoginVC.swift in Sources */,
 				45CABC2D1DF38B6C000207D0 /* AppDelegate.swift in Sources */,
 			);
