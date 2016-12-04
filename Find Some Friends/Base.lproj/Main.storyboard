@@ -6,6 +6,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="NotoSans-Regular.ttf">
+            <string>NotoSans</string>
+        </array>
         <array key="NotoSansUI-Regular.ttf">
             <string>NotoSansUI</string>
         </array>
@@ -144,17 +147,144 @@
                     <view key="view" contentMode="scaleToFill" id="ZsC-M0-K4S">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wol-eg-Pac">
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xab-zr-h0n">
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smile.png" translatesAutoresizingMaskIntoConstraints="NO" id="xUc-yI-KwG" customClass="RoundedProfilePic" customModule="Find_Some_Friends" customModuleProvider="target">
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="140" id="PCO-Hp-MHa"/>
+                                                    <constraint firstAttribute="height" constant="140" id="sJ9-Ob-Wiv"/>
+                                                </constraints>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1dV-Eu-tz8">
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="SQa-dv-BZb"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="NotoSansUI" family="Noto Sans UI" pointSize="17"/>
+                                                <state key="normal" title="CHANGE">
+                                                    <color key="titleColor" red="0.10980392160000001" green="0.72549019609999998" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="changeBtn:" destination="Vnn-d1-LN3" eventType="touchUpInside" id="QHk-0P-q9U"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="xUc-yI-KwG" firstAttribute="centerY" secondItem="xab-zr-h0n" secondAttribute="centerY" id="D9f-EY-Mkq"/>
+                                            <constraint firstAttribute="width" constant="200" id="Hs4-nP-kRw"/>
+                                            <constraint firstItem="1dV-Eu-tz8" firstAttribute="centerX" secondItem="xab-zr-h0n" secondAttribute="centerX" id="N52-lJ-Yji"/>
+                                            <constraint firstItem="1dV-Eu-tz8" firstAttribute="centerY" secondItem="xab-zr-h0n" secondAttribute="centerY" id="aft-NQ-gZp"/>
+                                            <constraint firstItem="xUc-yI-KwG" firstAttribute="centerX" secondItem="xab-zr-h0n" secondAttribute="centerX" id="cGB-Jy-YUV"/>
+                                            <constraint firstAttribute="height" constant="200" id="ivj-Yt-zgR"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="KNt-aP-rh5">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="mo5-U9-ebw"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="Male"/>
+                                            <segment title="Female"/>
+                                        </segments>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </segmentedControl>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xwf-WN-4kS">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="2" id="iE5-QN-opL"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="If2-Ha-68B">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="68" id="cWp-E2-5JZ"/>
+                                            <constraint firstAttribute="height" constant="35" id="mMG-OX-7O3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NotoSansUI" family="Noto Sans UI" pointSize="22"/>
+                                        <state key="normal" title="Save">
+                                            <color key="titleColor" red="0.10980392160000001" green="0.72549019609999998" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="saveBtn:" destination="Vnn-d1-LN3" eventType="touchUpInside" id="NFZ-uQ-CYI"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EbU-Ng-9CQ">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="yeE-ul-evB"/>
+                                        </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" red="0.10980392160000001" green="0.72549019609999998" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Xwf-WN-4kS" firstAttribute="top" secondItem="EbU-Ng-9CQ" secondAttribute="bottom" id="20X-6Q-k5W"/>
+                                    <constraint firstItem="If2-Ha-68B" firstAttribute="centerX" secondItem="Wol-eg-Pac" secondAttribute="centerX" id="6nX-as-EdA"/>
+                                    <constraint firstAttribute="trailing" secondItem="Xwf-WN-4kS" secondAttribute="trailing" id="Rdc-pK-c4N"/>
+                                    <constraint firstItem="EbU-Ng-9CQ" firstAttribute="leading" secondItem="Wol-eg-Pac" secondAttribute="leading" constant="8" id="Rzj-Vp-N0J"/>
+                                    <constraint firstItem="Xwf-WN-4kS" firstAttribute="leading" secondItem="Wol-eg-Pac" secondAttribute="leading" id="Sgn-HB-TG3"/>
+                                    <constraint firstItem="EbU-Ng-9CQ" firstAttribute="top" secondItem="KNt-aP-rh5" secondAttribute="bottom" constant="50" id="TYk-gA-mCE"/>
+                                    <constraint firstAttribute="trailing" secondItem="EbU-Ng-9CQ" secondAttribute="trailing" constant="8" id="ZyC-sw-lc8"/>
+                                    <constraint firstItem="If2-Ha-68B" firstAttribute="top" secondItem="Xwf-WN-4kS" secondAttribute="bottom" constant="28" id="hVq-iV-xHR"/>
+                                    <constraint firstItem="xab-zr-h0n" firstAttribute="centerX" secondItem="Wol-eg-Pac" secondAttribute="centerX" id="hVr-PL-fbl"/>
+                                    <constraint firstItem="KNt-aP-rh5" firstAttribute="centerX" secondItem="Wol-eg-Pac" secondAttribute="centerX" id="iDN-yi-cdi"/>
+                                    <constraint firstItem="KNt-aP-rh5" firstAttribute="top" secondItem="xab-zr-h0n" secondAttribute="bottom" constant="35" id="nHN-CW-v3u"/>
+                                    <constraint firstItem="xab-zr-h0n" firstAttribute="top" secondItem="Wol-eg-Pac" secondAttribute="top" constant="50" id="s5o-Oh-9Qi"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Wol-eg-Pac" firstAttribute="top" secondItem="ZsC-M0-K4S" secondAttribute="top" id="mh5-88-fGo"/>
+                            <constraint firstItem="SZH-A7-Fqd" firstAttribute="top" secondItem="Wol-eg-Pac" secondAttribute="bottom" id="ogc-h2-M9G"/>
+                            <constraint firstAttribute="trailing" secondItem="Wol-eg-Pac" secondAttribute="trailing" id="qqo-nx-SvH"/>
+                            <constraint firstItem="Wol-eg-Pac" firstAttribute="leading" secondItem="ZsC-M0-K4S" secondAttribute="leading" id="sJU-Rn-2kw"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="nameField" destination="EbU-Ng-9CQ" id="MZO-ll-gKd"/>
+                        <outlet property="profilePic" destination="xUc-yI-KwG" id="WNw-Se-BSx"/>
+                        <outlet property="segment" destination="KNt-aP-rh5" id="JMe-3s-7TZ"/>
+                        <segue destination="EVb-u6-VSG" kind="show" identifier="goToMain1" action="showDetailViewController:sender:" id="jYZ-HK-G5L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l17-vv-BHZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="956" y="58"/>
+            <point key="canvasLocation" x="956" y="57.121439280359823"/>
+        </scene>
+        <!--Main1VC-->
+        <scene sceneID="2qJ-yr-Dpd">
+            <objects>
+                <viewController id="EVb-u6-VSG" customClass="Main1VC" customModule="Find_Some_Friends" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HBr-rF-zbV"/>
+                        <viewControllerLayoutGuide type="bottom" id="OOW-ir-Rzq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OQI-Nj-w2f">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ey4-6r-Mum" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1778" y="57"/>
         </scene>
     </scenes>
     <resources>
         <image name="FSFBanner.png" width="944" height="186"/>
         <image name="closed-lock.png" width="64" height="64"/>
         <image name="mail.png" width="64" height="64"/>
+        <image name="smile.png" width="512" height="512"/>
     </resources>
 </document>

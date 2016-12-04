@@ -25,6 +25,9 @@
 		45CABC581DF39520000207D0 /* closed-lock.png in Resources */ = {isa = PBXBuildFile; fileRef = 45CABC571DF39520000207D0 /* closed-lock.png */; };
 		45CABC5A1DF39CDC000207D0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 45CABC591DF39CDC000207D0 /* GoogleService-Info.plist */; };
 		45CABC5C1DF3AA47000207D0 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CABC5B1DF3AA47000207D0 /* MainVC.swift */; };
+		45CABC5E1DF3AF51000207D0 /* Main1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CABC5D1DF3AF51000207D0 /* Main1VC.swift */; };
+		45CABC601DF3B090000207D0 /* RoundedProfilePic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CABC5F1DF3B090000207D0 /* RoundedProfilePic.swift */; };
+		45CABC621DF3B160000207D0 /* smile.png in Resources */ = {isa = PBXBuildFile; fileRef = 45CABC611DF3B160000207D0 /* smile.png */; };
 		61FF848C8D59DB2054D3647E /* Pods_Find_Some_Friends.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 979DB6753B055A3CFC018D22 /* Pods_Find_Some_Friends.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +52,9 @@
 		45CABC571DF39520000207D0 /* closed-lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "closed-lock.png"; sourceTree = "<group>"; };
 		45CABC591DF39CDC000207D0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		45CABC5B1DF3AA47000207D0 /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		45CABC5D1DF3AF51000207D0 /* Main1VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Main1VC.swift; sourceTree = "<group>"; };
+		45CABC5F1DF3B090000207D0 /* RoundedProfilePic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedProfilePic.swift; sourceTree = "<group>"; };
+		45CABC611DF3B160000207D0 /* smile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smile.png; sourceTree = "<group>"; };
 		979DB6753B055A3CFC018D22 /* Pods_Find_Some_Friends.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Find_Some_Friends.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2188F0273215344FB78EB9F /* Pods-Find Some Friends.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find Some Friends.release.xcconfig"; path = "Pods/Target Support Files/Pods-Find Some Friends/Pods-Find Some Friends.release.xcconfig"; sourceTree = "<group>"; };
 		C91877CC7E61B42C99171CC8 /* Pods-Find Some Friends.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find Some Friends.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Find Some Friends/Pods-Find Some Friends.debug.xcconfig"; sourceTree = "<group>"; };
@@ -112,6 +118,7 @@
 		45CABC411DF38DC5000207D0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				45CABC5F1DF3B090000207D0 /* RoundedProfilePic.swift */,
 				45CABC4D1DF390E4000207D0 /* MaterialView.swift */,
 			);
 			name = View;
@@ -122,6 +129,7 @@
 			children = (
 				45CABC2E1DF38B6C000207D0 /* LoginVC.swift */,
 				45CABC5B1DF3AA47000207D0 /* MainVC.swift */,
+				45CABC5D1DF3AF51000207D0 /* Main1VC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -129,6 +137,7 @@
 		45CABC431DF38DD0000207D0 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				45CABC611DF3B160000207D0 /* smile.png */,
 				45CABC551DF39516000207D0 /* mail.png */,
 				45CABC571DF39520000207D0 /* closed-lock.png */,
 				45CABC531DF394DE000207D0 /* mail-black-envelope-symbol.png */,
@@ -237,6 +246,7 @@
 				45CABC561DF39516000207D0 /* mail.png in Resources */,
 				45CABC341DF38B6C000207D0 /* Assets.xcassets in Resources */,
 				45CABC541DF394DE000207D0 /* mail-black-envelope-symbol.png in Resources */,
+				45CABC621DF3B160000207D0 /* smile.png in Resources */,
 				45CABC4B1DF38ED8000207D0 /* NotoSansUI-Bold.ttf in Resources */,
 				45CABC521DF39477000207D0 /* padlock.png in Resources */,
 				45CABC501DF392F7000207D0 /* FSFBanner.png in Resources */,
@@ -304,7 +314,9 @@
 			files = (
 				45CABC4E1DF390E4000207D0 /* MaterialView.swift in Sources */,
 				45CABC5C1DF3AA47000207D0 /* MainVC.swift in Sources */,
+				45CABC601DF3B090000207D0 /* RoundedProfilePic.swift in Sources */,
 				45CABC2F1DF38B6C000207D0 /* LoginVC.swift in Sources */,
+				45CABC5E1DF3AF51000207D0 /* Main1VC.swift in Sources */,
 				45CABC2D1DF38B6C000207D0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,6 +443,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = QKVT7MD2SK;
 				INFOPLIST_FILE = "Find Some Friends/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.John-Leonardo.Find-Some-Friends";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -445,6 +458,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = QKVT7MD2SK;
 				INFOPLIST_FILE = "Find Some Friends/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.John-Leonardo.Find-Some-Friends";
 				PRODUCT_NAME = "$(TARGET_NAME)";

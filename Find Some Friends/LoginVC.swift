@@ -20,7 +20,8 @@ class LoginVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginVC.dismissKeyboard))
+        view.addGestureRecognizer(tap)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -115,6 +116,11 @@ class LoginVC: UIViewController {
         let aC = UIAlertController(title: alertTitle, message: msg, preferredStyle: UIAlertControllerStyle.alert)
         aC.addAction(UIAlertAction(title: actionTitle, style: UIAlertActionStyle.cancel, handler: nil))
         present(aC, animated: true, completion: nil)
+    }
+    
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
 
