@@ -43,7 +43,7 @@ class Main1VC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
                         let user = User(uid: snap.key, profilePic: UIImage(data: data!)!, time: snap.value as! TimeInterval)
                         
                         self.users.append(user)
-                        print(self.users)
+                        self.users.sort(by: {$0.time < $1.time})
                         self.collection.reloadData()
                     }
                 })
