@@ -362,6 +362,7 @@
                     </view>
                     <connections>
                         <outlet property="bgView" destination="qxp-gq-N7V" id="LhK-oc-YTe"/>
+                        <outlet property="collection" destination="KgV-gB-hU7" id="M16-UO-EVU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ey4-6r-Mum" userLabel="First Responder" sceneMemberID="firstResponder"/>

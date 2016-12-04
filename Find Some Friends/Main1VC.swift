@@ -7,19 +7,53 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseStorage
+import FirebaseDatabase
+import Foundation
 
 class Main1VC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     @IBOutlet weak var bgView: UIView!
+    @IBOutlet weak var collection: UICollectionView!
+    
     var userID: String!
     
     let reuse = "UserCell"
-    var users = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
-
+    
+    let ref = FIRDatabase.database().reference().child("priority")
+    let storage = FIRStorage.storage().reference(forURL: "gs://findsomefriends-65c41.appspot.com/profilepics/")
+    var users = [User]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.bgView.backgroundColor = UIColor(patternImage: UIImage(named: "bg.png")!)
-        print(userID)
+        
+        collection.delegate = self
+        collection.dataSource = self
+        
+        ref.child("all").observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            for snap in snapshot.children.allObjects as! [FIRDataSnapshot]{
+                let r1 = self.storage.child(snap.key)
+                r1.data(withMaxSize: 1 * 1024 * 1024, completion: { (data, error) in
+                    if error != nil {
+                        print(error?.localizedDescription)
+                    } else {
+                        let user = User(uid: snap.key, profilePic: UIImage(data: data!)!, time: snap.value as! TimeInterval)
+                        
+                        self.users.append(user)
+                        print(self.users)
+                        self.collection.reloadData()
+                    }
+                })
+                
+            }
+            // ...
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -28,7 +62,8 @@ class Main1VC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuse, for: indexPath as IndexPath) as! UserCell
-        cell.profileImg.image = UIImage(named: "smile.png")
+        let currentUser = users[indexPath.item]
+        cell.profileImg.image = currentUser.profilePic
         return cell
     }
 
