@@ -8,6 +8,8 @@
 
 import UIKit
 import Firebase
+import FirebaseDatabase
+import FirebaseStorage
 
 class MainVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -19,6 +21,9 @@ class MainVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     @IBOutlet weak var nameField: UITextField!
     
     let picker = UIImagePickerController()
+    
+    var ref: FIRDatabaseReference!
+    let storage = FIRStorage.storage().reference(forURL: "gs://findsomefriends-65c41.appspot.com/profilepics/")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +65,42 @@ class MainVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     @IBAction func saveBtn(_ sender: AnyObject) {
         if let name = nameField.text, nameField.text != "" {
             //store name, profile pic, gender in firebase
+            let id = self.userID
+            switch segment.selectedSegmentIndex {
+            case 0:
+                //male
+                let data = ["name":name, "gender":"male"]
+                ref = FIRDatabase.database().reference()
+                ref.child("users").child("male").child(id!).updateChildValues(data)
+                let r1 = storage.child(id!)
+                let imgData: NSData = UIImageJPEGRepresentation(profilePic.image!, 0.2)! as NSData
+                let uploadTask = r1.put(imgData as Data, metadata: nil) { metadata, error in
+                    if (error != nil) {
+                        // Uh-oh, an error occurred!
+                    } else {
+                        UserDefaults.standard.set(true, forKey: "alreadySetup")
+                        self.performSegue(withIdentifier: "goToMain1", sender: nil)
+                    }
+                }
+                
+            case 1:
+                //female
+                let data = ["name":name, "gender":"female"]
+                ref = FIRDatabase.database().reference()
+                ref.child("users").child("female").child(id!).updateChildValues(data)
+                let r1 = storage.child(id!)
+                let imgData: NSData = UIImageJPEGRepresentation(profilePic.image!, 0.2)! as NSData
+                let uploadTask = r1.put(imgData as Data, metadata: nil) { metadata, error in
+                    if (error != nil) {
+                        // Uh-oh, an error occurred!
+                    } else {
+                        UserDefaults.standard.set(true, forKey: "alreadySetup")
+                        self.performSegue(withIdentifier: "goToMain1", sender: nil)
+                    }
+                }
+            default: break
+                
+            }
             
             
         } else {
