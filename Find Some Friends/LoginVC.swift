@@ -28,6 +28,12 @@ class LoginVC: UIViewController {
         let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
         if launchedBefore {
             print("Not the first launch")
+            let alreadySetup = UserDefaults.standard.bool(forKey: "alreadySetup")
+            if alreadySetup {
+                performSegue(withIdentifier: "goToMain11", sender: nil)
+            } else {
+                print(alreadySetup)
+            }
         } else {
             
             print("First launch, displaying welcome message")
@@ -52,6 +58,9 @@ class LoginVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "goToMain") {
             let destination = segue.destination as? MainVC
+            destination?.userID = userID
+        } else if (segue.identifier == "goToMain11") {
+            let destination = segue.destination as? Main1VC
             destination?.userID = userID
         }
     }

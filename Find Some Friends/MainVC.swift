@@ -93,8 +93,8 @@ class MainVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                 ref = FIRDatabase.database().reference()
                 let date = NSDate().timeIntervalSince1970
                 ref.child("users").child("female").child(id!).updateChildValues(data)
-                ref.child("priority").child("female").setValue(date, forKeyPath: id!)
-                ref.child("priority").child("all").setValue(date, forKeyPath: id!)
+                ref.child("priority").child("female").child(id!).setValue(date)
+                ref.child("priority").child("all").child(id!).setValue(date)
                 let r1 = storage.child(id!)
                 let imgData: NSData = UIImageJPEGRepresentation(profilePic.image!, 0.2)! as NSData
                 let uploadTask = r1.put(imgData as Data, metadata: nil) { metadata, error in

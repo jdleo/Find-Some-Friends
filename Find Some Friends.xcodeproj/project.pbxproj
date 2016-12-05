@@ -31,6 +31,10 @@
 		45CABC641DF3F611000207D0 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 45CABC631DF3F611000207D0 /* bg.png */; };
 		45CABC661DF3F8AB000207D0 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CABC651DF3F8AB000207D0 /* UserCell.swift */; };
 		45CABC681DF409BC000207D0 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CABC671DF409BC000207D0 /* File.swift */; };
+		45CABC6C1DF4C3AB000207D0 /* ascending-stairs-signal.png in Resources */ = {isa = PBXBuildFile; fileRef = 45CABC691DF4C3AB000207D0 /* ascending-stairs-signal.png */; };
+		45CABC6D1DF4C3AB000207D0 /* camera-settings-cogwheel.png in Resources */ = {isa = PBXBuildFile; fileRef = 45CABC6A1DF4C3AB000207D0 /* camera-settings-cogwheel.png */; };
+		45CABC6E1DF4C3AB000207D0 /* coins-stack.png in Resources */ = {isa = PBXBuildFile; fileRef = 45CABC6B1DF4C3AB000207D0 /* coins-stack.png */; };
+		45F8D9431DF622FE00D6BB1A /* Shuffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F8D9421DF622FE00D6BB1A /* Shuffle.swift */; };
 		61FF848C8D59DB2054D3647E /* Pods_Find_Some_Friends.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 979DB6753B055A3CFC018D22 /* Pods_Find_Some_Friends.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +65,10 @@
 		45CABC631DF3F611000207D0 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
 		45CABC651DF3F8AB000207D0 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		45CABC671DF409BC000207D0 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		45CABC691DF4C3AB000207D0 /* ascending-stairs-signal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ascending-stairs-signal.png"; sourceTree = "<group>"; };
+		45CABC6A1DF4C3AB000207D0 /* camera-settings-cogwheel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-settings-cogwheel.png"; sourceTree = "<group>"; };
+		45CABC6B1DF4C3AB000207D0 /* coins-stack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coins-stack.png"; sourceTree = "<group>"; };
+		45F8D9421DF622FE00D6BB1A /* Shuffle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shuffle.swift; sourceTree = "<group>"; };
 		979DB6753B055A3CFC018D22 /* Pods_Find_Some_Friends.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Find_Some_Friends.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2188F0273215344FB78EB9F /* Pods-Find Some Friends.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find Some Friends.release.xcconfig"; path = "Pods/Target Support Files/Pods-Find Some Friends/Pods-Find Some Friends.release.xcconfig"; sourceTree = "<group>"; };
 		C91877CC7E61B42C99171CC8 /* Pods-Find Some Friends.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find Some Friends.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Find Some Friends/Pods-Find Some Friends.debug.xcconfig"; sourceTree = "<group>"; };
@@ -119,6 +127,7 @@
 			children = (
 				45CABC651DF3F8AB000207D0 /* UserCell.swift */,
 				45CABC671DF409BC000207D0 /* File.swift */,
+				45F8D9421DF622FE00D6BB1A /* Shuffle.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -145,6 +154,9 @@
 		45CABC431DF38DD0000207D0 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				45CABC691DF4C3AB000207D0 /* ascending-stairs-signal.png */,
+				45CABC6A1DF4C3AB000207D0 /* camera-settings-cogwheel.png */,
+				45CABC6B1DF4C3AB000207D0 /* coins-stack.png */,
 				45CABC611DF3B160000207D0 /* smile.png */,
 				45CABC551DF39516000207D0 /* mail.png */,
 				45CABC631DF3F611000207D0 /* bg.png */,
@@ -249,7 +261,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				45CABC581DF39520000207D0 /* closed-lock.png in Resources */,
+				45CABC6D1DF4C3AB000207D0 /* camera-settings-cogwheel.png in Resources */,
 				45CABC5A1DF39CDC000207D0 /* GoogleService-Info.plist in Resources */,
+				45CABC6E1DF4C3AB000207D0 /* coins-stack.png in Resources */,
 				45CABC641DF3F611000207D0 /* bg.png in Resources */,
 				45CABC4A1DF38ED8000207D0 /* NotoSans-Regular.ttf in Resources */,
 				45CABC371DF38B6C000207D0 /* LaunchScreen.storyboard in Resources */,
@@ -257,6 +271,7 @@
 				45CABC341DF38B6C000207D0 /* Assets.xcassets in Resources */,
 				45CABC541DF394DE000207D0 /* mail-black-envelope-symbol.png in Resources */,
 				45CABC621DF3B160000207D0 /* smile.png in Resources */,
+				45CABC6C1DF4C3AB000207D0 /* ascending-stairs-signal.png in Resources */,
 				45CABC4B1DF38ED8000207D0 /* NotoSansUI-Bold.ttf in Resources */,
 				45CABC521DF39477000207D0 /* padlock.png in Resources */,
 				45CABC501DF392F7000207D0 /* FSFBanner.png in Resources */,
@@ -326,6 +341,7 @@
 				45CABC5C1DF3AA47000207D0 /* MainVC.swift in Sources */,
 				45CABC601DF3B090000207D0 /* RoundedProfilePic.swift in Sources */,
 				45CABC2F1DF38B6C000207D0 /* LoginVC.swift in Sources */,
+				45F8D9431DF622FE00D6BB1A /* Shuffle.swift in Sources */,
 				45CABC5E1DF3AF51000207D0 /* Main1VC.swift in Sources */,
 				45CABC681DF409BC000207D0 /* File.swift in Sources */,
 				45CABC2D1DF38B6C000207D0 /* AppDelegate.swift in Sources */,

@@ -14,6 +14,10 @@ import Foundation
 
 class Main1VC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
+    @IBOutlet weak var creditsLbl: UILabel!
+    @IBOutlet weak var segmentControl: UISegmentedControl!
+    
+    
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var collection: UICollectionView!
     
@@ -43,7 +47,8 @@ class Main1VC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
                         let user = User(uid: snap.key, profilePic: UIImage(data: data!)!, time: snap.value as! TimeInterval)
                         
                         self.users.append(user)
-                        self.users.sort(by: {$0.time < $1.time})
+                        //self.users.sort(by: {$0.time > $1.time})
+                        self.users.shuffle()
                         self.collection.reloadData()
                     }
                 })
@@ -66,5 +71,19 @@ class Main1VC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
         cell.profileImg.image = currentUser.profilePic
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.item)
+    }
+    @IBAction func settingsBtn(_ sender: AnyObject) {
+    }
+    
+    @IBAction func boostBtn(_ sender: AnyObject) {
+        //temporary placeholder
+        let alert = UIAlertController(title: "Coming soon!", message: "You will be able to boost your profile using credits. Each user will get 3 credits every day, but right now, profiles will be randomly shuffled", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Okay!", style: UIAlertActionStyle.cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
 
 }
