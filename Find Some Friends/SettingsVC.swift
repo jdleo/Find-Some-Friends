@@ -13,12 +13,10 @@ import FirebaseDatabase
 class SettingsVC: UIViewController {
     
     var userID: String!
-    var maleOrFemale: Int?
     
     let ref = FIRDatabase.database().reference()
 
     @IBOutlet weak var bgView: UIView!
-    
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var snapchatField: UITextField!
     @IBOutlet weak var kikField: UITextField!
@@ -35,12 +33,9 @@ class SettingsVC: UIViewController {
         ref.child("priority").observeSingleEvent(of: .value, with: { (snapshot) in
             // Check if current user is male or female to save time digging thru db
             if snapshot.childSnapshot(forPath: "male").hasChild(self.userID) {
-                print("\(self.userID) is male")
-                self.maleOrFemale = 0
                 self.updateFields(mf: 0)
                 
             } else if snapshot.childSnapshot(forPath: "female").hasChild(self.userID) {
-                self.maleOrFemale = 1
                 self.updateFields(mf: 1)
             }
             
