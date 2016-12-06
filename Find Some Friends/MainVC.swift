@@ -89,7 +89,7 @@ class MainVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                 
             case 1:
                 //female
-                let data = ["name":name, "gender":"male", "socials" : ["snapchat": "none", "kik": "none", "wechat": "none", "line": "none", "twitter": "none", "instagram": "none"]] as [String : Any]
+                let data = ["name":name, "gender":"male", "likes": 0, "socials" : ["snapchat": "none", "kik": "none", "wechat": "none", "line": "none", "twitter": "none", "instagram": "none"]] as [String : Any]
                 ref = FIRDatabase.database().reference()
                 let date = NSDate().timeIntervalSince1970
                 ref.child("users").child("female").child(id!).updateChildValues(data)

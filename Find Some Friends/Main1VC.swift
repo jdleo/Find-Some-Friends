@@ -35,28 +35,10 @@ class Main1VC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
         collection.delegate = self
         collection.dataSource = self
         
-        ref.child("all").observeSingleEvent(of: .value, with: { (snapshot) in
-            // Get user value
-            for snap in snapshot.children.allObjects as! [FIRDataSnapshot]{
-                let r1 = self.storage.child(snap.key)
-                r1.data(withMaxSize: 1 * 1024 * 1024, completion: { (data, error) in
-                    if error != nil {
-                        print(error?.localizedDescription)
-                    } else {
-                        let user = User(uid: snap.key, profilePic: UIImage(data: data!)!, time: snap.value as! TimeInterval)
-                        
-                        self.users.append(user)
-                        //self.users.sort(by: {$0.time > $1.time})
-                        self.users.shuffle()
-                        self.collection.reloadData()
-                    }
-                })
-                
-            }
-            // ...
-        }) { (error) in
-            print(error.localizedDescription)
-        }
+        segmentControl.addTarget(self, action: #selector(Main1VC.segmentedControlValueChanged), for:.valueChanged)
+        segmentControl.addTarget(self, action: #selector(Main1VC.segmentedControlValueChanged), for:.touchUpInside)
+        
+        loadUsers(gender: "all")
         
     }
     
@@ -98,6 +80,51 @@ class Main1VC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
         let alert = UIAlertController(title: "Coming soon!", message: "You will be able to boost your profile using credits. Each user will get 3 credits every day, but right now, profiles will be randomly shuffled", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Okay!", style: UIAlertActionStyle.cancel, handler: nil))
         present(alert, animated: true, completion: nil)
+    }
+    
+    func segmentedControlValueChanged(segment: UISegmentedControl) {
+        if segment.selectedSegmentIndex == 0 {
+            //all
+            print("load all")
+            loadUsers(gender: "all")
+            
+        } else if segment.selectedSegmentIndex == 1 {
+            //male
+            print("load male")
+            loadUsers(gender: "male")
+            
+        } else if segment.selectedSegmentIndex == 2 {
+            //female
+            loadUsers(gender: "female")
+            
+        }
+        
+    }
+    
+    func loadUsers(gender: String) {
+        ref.child(gender).observeSingleEvent(of: .value, with: { (snapshot) in
+            self.users = []
+            // Get user value
+            for snap in snapshot.children.allObjects as! [FIRDataSnapshot]{
+                let r1 = self.storage.child(snap.key)
+                r1.data(withMaxSize: 1 * 1024 * 1024, completion: { (data, error) in
+                    if error != nil {
+                        print(error?.localizedDescription)
+                    } else {
+                        let user = User(uid: snap.key, profilePic: UIImage(data: data!)!, time: snap.value as! TimeInterval)
+                        
+                        self.users.append(user)
+                        //self.users.sort(by: {$0.time > $1.time})
+                        self.users.shuffle()
+                        self.collection.reloadData()
+                    }
+                })
+                
+            }
+            // ...
+        }) { (error) in
+            print(error.localizedDescription)
+        }
     }
     
 
