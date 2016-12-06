@@ -64,6 +64,11 @@ class Main1VC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
         if (segue.identifier == "goToSettings") {
             let destination = segue.destination as? SettingsVC
             destination?.userID = userID
+        } else if (segue.identifier == "goToProfile") {
+            let controller = (segue.destination as! ProfileVC)
+            let item = (sender as! NSIndexPath).item //we know that sender is an NSIndexPath here.
+            let uid = users[item].uid
+            controller.theirID = uid
         }
     }
     
@@ -79,7 +84,9 @@ class Main1VC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.item)
+        let selectedUser = users[indexPath.item]
+        print(selectedUser.uid)
+        performSegue(withIdentifier: "goToProfile", sender: indexPath)
     }
     @IBAction func settingsBtn(_ sender: AnyObject) {
         performSegue(withIdentifier: "goToSettings", sender: nil)

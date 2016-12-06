@@ -368,7 +368,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V1a-zf-DnY">
+                                                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V1a-zf-DnY">
                                                             <color key="backgroundColor" red="0.10980392160000001" green="0.72549019609999998" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="95" id="BhY-gP-nnX"/>
@@ -429,16 +429,17 @@
                         <outlet property="creditsLbl" destination="K5v-00-2yy" id="EF5-b9-uaB"/>
                         <outlet property="segmentControl" destination="fyW-cV-wxJ" id="B8d-EQ-LfY"/>
                         <segue destination="PyU-6Y-ayS" kind="show" identifier="goToSettings" id="kEM-WP-IyQ"/>
+                        <segue destination="OFf-gS-Mr0" kind="show" identifier="goToProfile" id="eBh-T9-iaM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ey4-6r-Mum" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1810.4000000000001" y="78.710644677661179"/>
         </scene>
-        <!--View Controller-->
+        <!--ProfileVC-->
         <scene sceneID="wSr-9U-ywW">
             <objects>
-                <viewController id="OFf-gS-Mr0" sceneMemberID="viewController">
+                <viewController id="OFf-gS-Mr0" customClass="ProfileVC" customModule="Find_Some_Friends" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="syd-Mq-wjU"/>
                         <viewControllerLayoutGuide type="bottom" id="Qz9-F9-t6Q"/>
@@ -448,8 +449,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UXF-zs-eMC">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yKz-g8-fvm">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="QZH-e7-vhw"/>
+                                            <constraint firstAttribute="width" constant="40" id="Y3R-E3-afQ"/>
+                                        </constraints>
+                                        <state key="normal" image="back-button.png"/>
+                                        <connections>
+                                            <action selector="backBtn:" destination="OFf-gS-Mr0" eventType="touchUpInside" id="PZq-Tr-QkL"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="0.10980392160000001" green="0.72549019609999998" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="yKz-g8-fvm" firstAttribute="leading" secondItem="UXF-zs-eMC" secondAttribute="leading" constant="8" id="Nle-N1-CgR"/>
+                                    <constraint firstAttribute="bottom" secondItem="yKz-g8-fvm" secondAttribute="bottom" constant="8" id="Npu-E2-c6X"/>
                                     <constraint firstAttribute="height" constant="100" id="cAX-CS-iuC"/>
                                 </constraints>
                             </view>
@@ -563,6 +578,16 @@
                             <constraint firstItem="UXF-zs-eMC" firstAttribute="leading" secondItem="vE9-IZ-HZV" secondAttribute="leading" id="mA5-7J-ALv"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bgView" destination="LP0-zM-Xxe" id="5MA-Yu-SKZ"/>
+                        <outlet property="instagramLbl" destination="NlN-6L-HS4" id="UJk-eN-oEl"/>
+                        <outlet property="kikLbl" destination="9Hg-U3-1ju" id="fqj-ym-AfP"/>
+                        <outlet property="lineLbl" destination="2q5-Zg-abH" id="ed2-Yx-YoX"/>
+                        <outlet property="profileImg" destination="kTM-3l-h8f" id="2e9-a8-Mbx"/>
+                        <outlet property="snapchatLbl" destination="dPu-Bp-qcr" id="BNF-FX-3gX"/>
+                        <outlet property="twitterLbl" destination="odP-nF-B9A" id="33n-El-Bad"/>
+                        <outlet property="wechatLbl" destination="0VN-Q9-Npn" id="l9A-A0-xL2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rEc-9h-2Uk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -770,6 +795,7 @@
         <image name="1481000282_social_line.png" width="128" height="128"/>
         <image name="FSFBanner.png" width="944" height="186"/>
         <image name="ascending-stairs-signal.png" width="128" height="128"/>
+        <image name="back-button.png" width="64" height="64"/>
         <image name="camera-settings-cogwheel.png" width="128" height="128"/>
         <image name="closed-lock.png" width="64" height="64"/>
         <image name="coins-stack.png" width="128" height="128"/>
@@ -778,6 +804,6 @@
         <image name="smile.png" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jYZ-HK-G5L"/>
+        <segue reference="Utc-Ta-aTb"/>
     </inferredMetricsTieBreakers>
 </document>
