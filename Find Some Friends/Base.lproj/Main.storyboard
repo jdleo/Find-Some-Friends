@@ -23,7 +23,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DWc-ZZ-kaO">
@@ -146,7 +146,7 @@
                         <viewControllerLayoutGuide type="bottom" id="SZH-A7-Fqd"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ZsC-M0-K4S">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wol-eg-Pac">
@@ -272,7 +272,7 @@
                         <viewControllerLayoutGuide type="bottom" id="OOW-ir-Rzq"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="OQI-Nj-w2f">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5o7-BC-oO9">
@@ -357,7 +357,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <view key="backgroundView" contentMode="scaleToFill" id="3eR-Vd-Lbp">
-                                            <rect key="frame" x="0.0" y="0.0" width="359" height="551"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="398" height="620"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </view>
                                         <cells>
@@ -428,14 +428,197 @@
                         <outlet property="collection" destination="KgV-gB-hU7" id="M16-UO-EVU"/>
                         <outlet property="creditsLbl" destination="K5v-00-2yy" id="EF5-b9-uaB"/>
                         <outlet property="segmentControl" destination="fyW-cV-wxJ" id="B8d-EQ-LfY"/>
+                        <segue destination="PyU-6Y-ayS" kind="show" identifier="goToSettings" id="kEM-WP-IyQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ey4-6r-Mum" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1810.4000000000001" y="78.710644677661179"/>
         </scene>
+        <!--SettingsVC-->
+        <scene sceneID="3yr-ZK-5L8">
+            <objects>
+                <viewController id="PyU-6Y-ayS" customClass="SettingsVC" customModule="Find_Some_Friends" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Old-19-w9v"/>
+                        <viewControllerLayoutGuide type="bottom" id="0pO-Zi-Kbp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bnc-gP-QCS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DXP-Ka-R1T">
+                                <color key="backgroundColor" red="0.10980392160000001" green="0.72549019609999998" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="4u2-Od-PvE"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zPg-xT-JFQ">
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="gmP-ic-9xA">
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1481000242_social_snapchat.png" translatesAutoresizingMaskIntoConstraints="NO" id="pe8-ds-kW9">
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="VW9-rr-ko9"/>
+                                                    <constraint firstAttribute="height" constant="40" id="by2-Q8-81m"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1481000209_social_kik.png" translatesAutoresizingMaskIntoConstraints="NO" id="dal-zu-KMi">
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="1KF-Oa-5U1"/>
+                                                    <constraint firstAttribute="width" constant="40" id="PLf-he-iOZ"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1481000251_social_we_chat.png" translatesAutoresizingMaskIntoConstraints="NO" id="hnb-3G-a9j">
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="4vq-o5-ljt"/>
+                                                    <constraint firstAttribute="width" constant="40" id="v5w-2I-OL5"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1481000260_social_twitter.png" translatesAutoresizingMaskIntoConstraints="NO" id="vo1-OD-AG7">
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="9uU-lX-bzx"/>
+                                                    <constraint firstAttribute="height" constant="40" id="s31-Vb-ZEZ"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1481000225_social_instagram.png" translatesAutoresizingMaskIntoConstraints="NO" id="igQ-rN-iWr">
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="1XT-4X-POi"/>
+                                                    <constraint firstAttribute="width" constant="40" id="fEv-8h-7MX"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1481000282_social_line.png" translatesAutoresizingMaskIntoConstraints="NO" id="IHl-a3-m0l">
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="pfb-oZ-8G6"/>
+                                                    <constraint firstAttribute="height" constant="40" id="szr-yi-ubr"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pmI-Tl-ZW1">
+                                        <frame key="frameInset" minX="69" minY="63" width="306" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="NotoSansUI" family="Noto Sans UI" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="CEY-7J-Ihq">
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="inK-qa-ckk">
+                                                <fontDescription key="fontDescription" name="NotoSansUI" family="Noto Sans UI" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="My Name" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KkC-FC-OFo">
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="NotoSansUI" family="Noto Sans UI" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="5yG-hb-Wkf"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="BPx-1q-480">
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="My Name" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YBA-4k-nhu">
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="1lo-TF-k7Q"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="NotoSansUI" family="Noto Sans UI" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="My Name" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JHH-es-WHt">
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="1rq-Wv-hZ2"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="NotoSansUI" family="Noto Sans UI" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="My Name" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pgc-zK-PRi">
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="xd0-Br-QLo"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="NotoSansUI" family="Noto Sans UI" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="My Name" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cAY-hl-BDG">
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="4E0-bV-VRb"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="NotoSansUI" family="Noto Sans UI" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="My Name" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="URS-i7-rTO">
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="z4o-z3-huW"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="NotoSansUI" family="Noto Sans UI" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="My Name" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="66P-I1-LYG">
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="Thz-cA-20u"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="NotoSansUI" family="Noto Sans UI" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailingMargin" secondItem="CEY-7J-Ihq" secondAttribute="trailing" id="5nf-oU-AJo"/>
+                                    <constraint firstItem="BPx-1q-480" firstAttribute="leading" secondItem="gmP-ic-9xA" secondAttribute="trailing" constant="24" id="9QR-Si-rot"/>
+                                    <constraint firstItem="BPx-1q-480" firstAttribute="top" secondItem="CEY-7J-Ihq" secondAttribute="bottom" constant="18" id="Hy2-oq-fyi"/>
+                                    <constraint firstItem="CEY-7J-Ihq" firstAttribute="leading" secondItem="zPg-xT-JFQ" secondAttribute="leadingMargin" id="Jbv-Hz-eyf"/>
+                                    <constraint firstItem="gmP-ic-9xA" firstAttribute="top" secondItem="CEY-7J-Ihq" secondAttribute="bottom" constant="18" id="Tdv-ar-jHH"/>
+                                    <constraint firstItem="gmP-ic-9xA" firstAttribute="leading" secondItem="zPg-xT-JFQ" secondAttribute="leading" constant="5" id="XYJ-Zp-U6u"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="BPx-1q-480" secondAttribute="trailing" id="dsG-I8-wXp"/>
+                                    <constraint firstItem="CEY-7J-Ihq" firstAttribute="top" secondItem="zPg-xT-JFQ" secondAttribute="top" constant="20" id="h8T-yf-gJy"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0pO-Zi-Kbp" firstAttribute="top" secondItem="zPg-xT-JFQ" secondAttribute="bottom" id="4Ev-hO-bCc"/>
+                            <constraint firstAttribute="trailing" secondItem="DXP-Ka-R1T" secondAttribute="trailing" id="CfU-gF-sfn"/>
+                            <constraint firstAttribute="trailing" secondItem="zPg-xT-JFQ" secondAttribute="trailing" id="Z7x-qI-5gP"/>
+                            <constraint firstItem="zPg-xT-JFQ" firstAttribute="top" secondItem="DXP-Ka-R1T" secondAttribute="bottom" id="cVh-ht-I6J"/>
+                            <constraint firstItem="zPg-xT-JFQ" firstAttribute="leading" secondItem="bnc-gP-QCS" secondAttribute="leading" id="mTS-x1-d7n"/>
+                            <constraint firstItem="DXP-Ka-R1T" firstAttribute="leading" secondItem="bnc-gP-QCS" secondAttribute="leading" id="qAx-Uo-hkR"/>
+                            <constraint firstItem="DXP-Ka-R1T" firstAttribute="top" secondItem="bnc-gP-QCS" secondAttribute="top" id="x2M-Wc-qk3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bgView" destination="zPg-xT-JFQ" id="aKM-G2-TTH"/>
+                        <outlet property="instagramField" destination="URS-i7-rTO" id="VFY-xY-rR1"/>
+                        <outlet property="kikField" destination="JHH-es-WHt" id="i8b-Sd-p9l"/>
+                        <outlet property="lineField" destination="66P-I1-LYG" id="6mM-jv-GJX"/>
+                        <outlet property="nameField" destination="KkC-FC-OFo" id="lEl-Ry-C9q"/>
+                        <outlet property="snapchatField" destination="YBA-4k-nhu" id="gDp-ZT-nGJ"/>
+                        <outlet property="twitterField" destination="cAY-hl-BDG" id="hm9-XS-50r"/>
+                        <outlet property="wechatField" destination="pgc-zK-PRi" id="MQx-DX-4yJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e8S-84-Swf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2741.5999999999999" y="68.815592203898049"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="1481000209_social_kik.png" width="128" height="128"/>
+        <image name="1481000225_social_instagram.png" width="128" height="128"/>
+        <image name="1481000242_social_snapchat.png" width="128" height="128"/>
+        <image name="1481000251_social_we_chat.png" width="128" height="128"/>
+        <image name="1481000260_social_twitter.png" width="128" height="128"/>
+        <image name="1481000282_social_line.png" width="128" height="128"/>
         <image name="FSFBanner.png" width="944" height="186"/>
         <image name="ascending-stairs-signal.png" width="128" height="128"/>
         <image name="camera-settings-cogwheel.png" width="128" height="128"/>
@@ -445,6 +628,6 @@
         <image name="smile.png" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Utc-Ta-aTb"/>
+        <segue reference="jYZ-HK-G5L"/>
     </inferredMetricsTieBreakers>
 </document>

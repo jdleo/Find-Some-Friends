@@ -32,7 +32,6 @@ class Main1VC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
     override func viewDidLoad() {
         super.viewDidLoad()
         self.bgView.backgroundColor = UIColor(patternImage: UIImage(named: "bg.png")!)
-        
         collection.delegate = self
         collection.dataSource = self
         
@@ -61,6 +60,13 @@ class Main1VC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "goToSettings") {
+            let destination = segue.destination as? SettingsVC
+            destination?.userID = userID
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return users.count
     }
@@ -76,6 +82,7 @@ class Main1VC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
         print(indexPath.item)
     }
     @IBAction func settingsBtn(_ sender: AnyObject) {
+        performSegue(withIdentifier: "goToSettings", sender: nil)
     }
     
     @IBAction func boostBtn(_ sender: AnyObject) {

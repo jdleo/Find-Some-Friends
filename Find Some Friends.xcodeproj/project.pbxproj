@@ -35,6 +35,13 @@
 		45CABC6D1DF4C3AB000207D0 /* camera-settings-cogwheel.png in Resources */ = {isa = PBXBuildFile; fileRef = 45CABC6A1DF4C3AB000207D0 /* camera-settings-cogwheel.png */; };
 		45CABC6E1DF4C3AB000207D0 /* coins-stack.png in Resources */ = {isa = PBXBuildFile; fileRef = 45CABC6B1DF4C3AB000207D0 /* coins-stack.png */; };
 		45F8D9431DF622FE00D6BB1A /* Shuffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F8D9421DF622FE00D6BB1A /* Shuffle.swift */; };
+		45F8D94A1DF6289900D6BB1A /* 1481000209_social_kik.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F8D9441DF6289900D6BB1A /* 1481000209_social_kik.png */; };
+		45F8D94B1DF6289900D6BB1A /* 1481000225_social_instagram.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F8D9451DF6289900D6BB1A /* 1481000225_social_instagram.png */; };
+		45F8D94C1DF6289900D6BB1A /* 1481000242_social_snapchat.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F8D9461DF6289900D6BB1A /* 1481000242_social_snapchat.png */; };
+		45F8D94D1DF6289900D6BB1A /* 1481000251_social_we_chat.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F8D9471DF6289900D6BB1A /* 1481000251_social_we_chat.png */; };
+		45F8D94E1DF6289900D6BB1A /* 1481000260_social_twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F8D9481DF6289900D6BB1A /* 1481000260_social_twitter.png */; };
+		45F8D94F1DF6289900D6BB1A /* 1481000282_social_line.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F8D9491DF6289900D6BB1A /* 1481000282_social_line.png */; };
+		45F8D9511DF62D2D00D6BB1A /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F8D9501DF62D2D00D6BB1A /* SettingsVC.swift */; };
 		61FF848C8D59DB2054D3647E /* Pods_Find_Some_Friends.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 979DB6753B055A3CFC018D22 /* Pods_Find_Some_Friends.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +76,13 @@
 		45CABC6A1DF4C3AB000207D0 /* camera-settings-cogwheel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-settings-cogwheel.png"; sourceTree = "<group>"; };
 		45CABC6B1DF4C3AB000207D0 /* coins-stack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coins-stack.png"; sourceTree = "<group>"; };
 		45F8D9421DF622FE00D6BB1A /* Shuffle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shuffle.swift; sourceTree = "<group>"; };
+		45F8D9441DF6289900D6BB1A /* 1481000209_social_kik.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1481000209_social_kik.png; sourceTree = "<group>"; };
+		45F8D9451DF6289900D6BB1A /* 1481000225_social_instagram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1481000225_social_instagram.png; sourceTree = "<group>"; };
+		45F8D9461DF6289900D6BB1A /* 1481000242_social_snapchat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1481000242_social_snapchat.png; sourceTree = "<group>"; };
+		45F8D9471DF6289900D6BB1A /* 1481000251_social_we_chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1481000251_social_we_chat.png; sourceTree = "<group>"; };
+		45F8D9481DF6289900D6BB1A /* 1481000260_social_twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1481000260_social_twitter.png; sourceTree = "<group>"; };
+		45F8D9491DF6289900D6BB1A /* 1481000282_social_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1481000282_social_line.png; sourceTree = "<group>"; };
+		45F8D9501DF62D2D00D6BB1A /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		979DB6753B055A3CFC018D22 /* Pods_Find_Some_Friends.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Find_Some_Friends.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2188F0273215344FB78EB9F /* Pods-Find Some Friends.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find Some Friends.release.xcconfig"; path = "Pods/Target Support Files/Pods-Find Some Friends/Pods-Find Some Friends.release.xcconfig"; sourceTree = "<group>"; };
 		C91877CC7E61B42C99171CC8 /* Pods-Find Some Friends.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find Some Friends.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Find Some Friends/Pods-Find Some Friends.debug.xcconfig"; sourceTree = "<group>"; };
@@ -147,6 +161,7 @@
 				45CABC2E1DF38B6C000207D0 /* LoginVC.swift */,
 				45CABC5B1DF3AA47000207D0 /* MainVC.swift */,
 				45CABC5D1DF3AF51000207D0 /* Main1VC.swift */,
+				45F8D9501DF62D2D00D6BB1A /* SettingsVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -157,6 +172,12 @@
 				45CABC691DF4C3AB000207D0 /* ascending-stairs-signal.png */,
 				45CABC6A1DF4C3AB000207D0 /* camera-settings-cogwheel.png */,
 				45CABC6B1DF4C3AB000207D0 /* coins-stack.png */,
+				45F8D9441DF6289900D6BB1A /* 1481000209_social_kik.png */,
+				45F8D9451DF6289900D6BB1A /* 1481000225_social_instagram.png */,
+				45F8D9461DF6289900D6BB1A /* 1481000242_social_snapchat.png */,
+				45F8D9471DF6289900D6BB1A /* 1481000251_social_we_chat.png */,
+				45F8D9481DF6289900D6BB1A /* 1481000260_social_twitter.png */,
+				45F8D9491DF6289900D6BB1A /* 1481000282_social_line.png */,
 				45CABC611DF3B160000207D0 /* smile.png */,
 				45CABC551DF39516000207D0 /* mail.png */,
 				45CABC631DF3F611000207D0 /* bg.png */,
@@ -269,16 +290,22 @@
 				45CABC371DF38B6C000207D0 /* LaunchScreen.storyboard in Resources */,
 				45CABC561DF39516000207D0 /* mail.png in Resources */,
 				45CABC341DF38B6C000207D0 /* Assets.xcassets in Resources */,
+				45F8D94B1DF6289900D6BB1A /* 1481000225_social_instagram.png in Resources */,
 				45CABC541DF394DE000207D0 /* mail-black-envelope-symbol.png in Resources */,
 				45CABC621DF3B160000207D0 /* smile.png in Resources */,
+				45F8D94C1DF6289900D6BB1A /* 1481000242_social_snapchat.png in Resources */,
 				45CABC6C1DF4C3AB000207D0 /* ascending-stairs-signal.png in Resources */,
 				45CABC4B1DF38ED8000207D0 /* NotoSansUI-Bold.ttf in Resources */,
+				45F8D94A1DF6289900D6BB1A /* 1481000209_social_kik.png in Resources */,
+				45F8D94D1DF6289900D6BB1A /* 1481000251_social_we_chat.png in Resources */,
 				45CABC521DF39477000207D0 /* padlock.png in Resources */,
+				45F8D94E1DF6289900D6BB1A /* 1481000260_social_twitter.png in Resources */,
 				45CABC501DF392F7000207D0 /* FSFBanner.png in Resources */,
 				45CABC4C1DF38ED8000207D0 /* NotoSansUI-Regular.ttf in Resources */,
 				45CABC3F1DF38DB5000207D0 /* people.png in Resources */,
 				45CABC491DF38ED8000207D0 /* NotoSans-Bold.ttf in Resources */,
 				45CABC321DF38B6C000207D0 /* Main.storyboard in Resources */,
+				45F8D94F1DF6289900D6BB1A /* 1481000282_social_line.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +373,7 @@
 				45CABC681DF409BC000207D0 /* File.swift in Sources */,
 				45CABC2D1DF38B6C000207D0 /* AppDelegate.swift in Sources */,
 				45CABC661DF3F8AB000207D0 /* UserCell.swift in Sources */,
+				45F8D9511DF62D2D00D6BB1A /* SettingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

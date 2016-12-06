@@ -30,7 +30,16 @@ class LoginVC: UIViewController {
             print("Not the first launch")
             let alreadySetup = UserDefaults.standard.bool(forKey: "alreadySetup")
             if alreadySetup {
-                performSegue(withIdentifier: "goToMain11", sender: nil)
+                if let email = UserDefaults.standard.string(forKey: "email"), let password = UserDefaults.standard.string(forKey: "password") {
+                    FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
+                        if error != nil {
+                            print("some error, ill handle it later")
+                        } else {
+                            self.userID = user?.uid
+                            self.performSegue(withIdentifier: "goToMain11", sender: nil)
+                        }
+                    })
+                }
             } else {
                 print(alreadySetup)
             }
