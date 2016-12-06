@@ -435,6 +435,139 @@
             </objects>
             <point key="canvasLocation" x="1810.4000000000001" y="78.710644677661179"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="wSr-9U-ywW">
+            <objects>
+                <viewController id="OFf-gS-Mr0" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="syd-Mq-wjU"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qz9-F9-t6Q"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vE9-IZ-HZV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UXF-zs-eMC">
+                                <color key="backgroundColor" red="0.10980392160000001" green="0.72549019609999998" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="cAX-CS-iuC"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LP0-zM-Xxe">
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smile.png" translatesAutoresizingMaskIntoConstraints="NO" id="kTM-3l-h8f" customClass="RoundedProfilePic" customModule="Find_Some_Friends" customModuleProvider="target">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="Hb2-i0-zQ5"/>
+                                            <constraint firstAttribute="height" constant="150" id="U8b-yf-ttF"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Q2H-3T-Jvi">
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="TCV-PJ-W0u">
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1481000242_social_snapchat.png" translatesAutoresizingMaskIntoConstraints="NO" id="pV5-xP-LP1">
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="hGQ-Fn-3tS"/>
+                                                            <constraint firstAttribute="width" constant="40" id="lLh-PM-gsQ"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1481000209_social_kik.png" translatesAutoresizingMaskIntoConstraints="NO" id="svm-j2-QTd">
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="gXh-8v-iQd"/>
+                                                            <constraint firstAttribute="width" constant="40" id="sFd-pF-xwf"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1481000251_social_we_chat.png" translatesAutoresizingMaskIntoConstraints="NO" id="G75-ZI-wSQ">
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="40" id="Ju3-gY-MJZ"/>
+                                                            <constraint firstAttribute="height" constant="40" id="fXl-SY-jUr"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1481000225_social_instagram.png" translatesAutoresizingMaskIntoConstraints="NO" id="sq6-Th-LSS">
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="40" id="1nH-85-na1"/>
+                                                            <constraint firstAttribute="height" constant="40" id="W1y-VR-duK"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1481000260_social_twitter.png" translatesAutoresizingMaskIntoConstraints="NO" id="iw2-XF-w7s">
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="40" id="WVh-h7-2hS"/>
+                                                            <constraint firstAttribute="height" constant="40" id="lJT-yn-MZG"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1481000282_social_line.png" translatesAutoresizingMaskIntoConstraints="NO" id="Lv1-bt-pLf">
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="40" id="6MX-yL-UdV"/>
+                                                            <constraint firstAttribute="height" constant="40" id="xD9-5e-owb"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="2o5-xJ-9BG">
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LongUsername123456" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dPu-Bp-qcr">
+                                                        <fontDescription key="fontDescription" name="NotoSansUI" family="Noto Sans UI" pointSize="17"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Hg-U3-1ju">
+                                                        <fontDescription key="fontDescription" name="NotoSansUI" family="Noto Sans UI" pointSize="17"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LongUsername123456" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0VN-Q9-Npn">
+                                                        <fontDescription key="fontDescription" name="NotoSansUI" family="Noto Sans UI" pointSize="17"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LongUsername123456" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NlN-6L-HS4">
+                                                        <fontDescription key="fontDescription" name="NotoSansUI" family="Noto Sans UI" pointSize="17"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LongUsername123456" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="odP-nF-B9A">
+                                                        <fontDescription key="fontDescription" name="NotoSansUI" family="Noto Sans UI" pointSize="17"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LongUsername123456" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2q5-Zg-abH">
+                                                        <fontDescription key="fontDescription" name="NotoSansUI" family="Noto Sans UI" pointSize="17"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="240" id="u0J-1Q-4AI"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="kTM-3l-h8f" firstAttribute="top" secondItem="LP0-zM-Xxe" secondAttribute="top" constant="-75" id="6Fl-o3-TH3"/>
+                                    <constraint firstItem="kTM-3l-h8f" firstAttribute="centerX" secondItem="LP0-zM-Xxe" secondAttribute="centerX" id="Mpv-T6-C7o"/>
+                                    <constraint firstItem="Q2H-3T-Jvi" firstAttribute="top" secondItem="kTM-3l-h8f" secondAttribute="bottom" constant="20" id="cPn-Vj-uzh"/>
+                                    <constraint firstItem="Q2H-3T-Jvi" firstAttribute="centerX" secondItem="LP0-zM-Xxe" secondAttribute="centerX" id="eg8-jL-G7J"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Qz9-F9-t6Q" firstAttribute="top" secondItem="LP0-zM-Xxe" secondAttribute="bottom" id="3hZ-fc-dbP"/>
+                            <constraint firstItem="UXF-zs-eMC" firstAttribute="top" secondItem="vE9-IZ-HZV" secondAttribute="top" id="5W0-dc-rUK"/>
+                            <constraint firstAttribute="trailing" secondItem="UXF-zs-eMC" secondAttribute="trailing" id="AUw-pb-FYQ"/>
+                            <constraint firstItem="LP0-zM-Xxe" firstAttribute="leading" secondItem="vE9-IZ-HZV" secondAttribute="leading" id="TfV-Do-xy4"/>
+                            <constraint firstAttribute="trailing" secondItem="LP0-zM-Xxe" secondAttribute="trailing" id="U9K-og-Twq"/>
+                            <constraint firstItem="LP0-zM-Xxe" firstAttribute="top" secondItem="UXF-zs-eMC" secondAttribute="bottom" id="cqb-c9-Ram"/>
+                            <constraint firstItem="UXF-zs-eMC" firstAttribute="leading" secondItem="vE9-IZ-HZV" secondAttribute="leading" id="mA5-7J-ALv"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rEc-9h-2Uk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2779.7101449275365" y="-567.39130434782612"/>
+        </scene>
         <!--SettingsVC-->
         <scene sceneID="3yr-ZK-5L8">
             <objects>

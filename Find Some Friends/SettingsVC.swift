@@ -14,6 +14,8 @@ class SettingsVC: UIViewController {
     
     var userID: String!
     
+    var maleFemale: Int!
+    
     let ref = FIRDatabase.database().reference()
 
     @IBOutlet weak var bgView: UIView!
@@ -33,9 +35,11 @@ class SettingsVC: UIViewController {
         ref.child("priority").observeSingleEvent(of: .value, with: { (snapshot) in
             // Check if current user is male or female to save time digging thru db
             if snapshot.childSnapshot(forPath: "male").hasChild(self.userID) {
+                self.maleFemale = 0
                 self.updateFields(mf: 0)
                 
             } else if snapshot.childSnapshot(forPath: "female").hasChild(self.userID) {
+                self.maleFemale = 1
                 self.updateFields(mf: 1)
             }
             
@@ -81,7 +85,20 @@ class SettingsVC: UIViewController {
     
     
     @IBAction func saveBtn(_ sender: AnyObject) {
+        let data = ["snapchat": snapchatField.text! as String, "kik": kikField.text! as String, "wechat": wechatField.text! as String, "line": lineField.text! as String, "twitter": twitterField.text! as String, "instagram": instagramField.text! as String]
+        switch maleFemale {
+        case 0:
+            updateFirebase(gender: "male", data: data)
+        case 1:
+            updateFirebase(gender: "female", data: data)
+        default:
+            break
+        }
         performSegue(withIdentifier: "unwindToMain", sender: nil)
+    }
+    
+    func updateFirebase(gender: String, data: [String:String]) {
+        ref.child("users").child(gender).child(userID).child("socials").updateChildValues(data)
     }
 
 }
