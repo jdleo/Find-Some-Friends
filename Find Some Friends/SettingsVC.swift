@@ -78,5 +78,10 @@ class SettingsVC: UIViewController {
             
         }
     }
+    
+    
+    @IBAction func saveBtn(_ sender: AnyObject) {
+        performSegue(withIdentifier: "unwindToMain", sender: nil)
+    }
 
 }

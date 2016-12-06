@@ -448,9 +448,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DXP-Ka-R1T">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IT9-aM-rLo">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Idu-c8-VAK"/>
+                                            <constraint firstAttribute="width" constant="40" id="pj3-Eb-mh4"/>
+                                        </constraints>
+                                        <state key="normal" image="save-disk.png"/>
+                                        <connections>
+                                            <action selector="saveBtn:" destination="PyU-6Y-ayS" eventType="touchUpInside" id="KpW-C0-lM4"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="0.10980392160000001" green="0.72549019609999998" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="4u2-Od-PvE"/>
+                                    <constraint firstItem="IT9-aM-rLo" firstAttribute="leading" secondItem="DXP-Ka-R1T" secondAttribute="leading" constant="15" id="lgO-D8-U0u"/>
+                                    <constraint firstAttribute="bottom" secondItem="IT9-aM-rLo" secondAttribute="bottom" constant="15" id="uv1-PI-kFR"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zPg-xT-JFQ">
@@ -605,9 +619,11 @@
                         <outlet property="snapchatField" destination="YBA-4k-nhu" id="gDp-ZT-nGJ"/>
                         <outlet property="twitterField" destination="cAY-hl-BDG" id="hm9-XS-50r"/>
                         <outlet property="wechatField" destination="pgc-zK-PRi" id="MQx-DX-4yJ"/>
+                        <segue destination="RoU-Wg-aGW" kind="unwind" identifier="unwindToMain" unwindAction="unwindToMainWithSegue:" id="bNg-FR-MEL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e8S-84-Swf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="RoU-Wg-aGW" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2741.5999999999999" y="68.815592203898049"/>
         </scene>
@@ -625,6 +641,7 @@
         <image name="closed-lock.png" width="64" height="64"/>
         <image name="coins-stack.png" width="128" height="128"/>
         <image name="mail.png" width="64" height="64"/>
+        <image name="save-disk.png" width="64" height="64"/>
         <image name="smile.png" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>

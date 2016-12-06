@@ -84,6 +84,7 @@ class Main1VC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
     @IBAction func settingsBtn(_ sender: AnyObject) {
         performSegue(withIdentifier: "goToSettings", sender: nil)
     }
+    @IBAction func unwindToMain(segue: UIStoryboardSegue) {}
     
     @IBAction func boostBtn(_ sender: AnyObject) {
         //temporary placeholder
