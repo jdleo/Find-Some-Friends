@@ -41,7 +41,7 @@ class LoginVC: UIViewController {
                     })
                 }
             } else {
-                print(alreadySetup)
+                print("NOT SETUP YET")
             }
         } else {
             

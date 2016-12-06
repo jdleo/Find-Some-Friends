@@ -37,9 +37,11 @@ class SettingsVC: UIViewController {
             if snapshot.childSnapshot(forPath: "male").hasChild(self.userID) {
                 print("\(self.userID) is male")
                 self.maleOrFemale = 0
+                self.updateFields(mf: 0)
                 
             } else if snapshot.childSnapshot(forPath: "female").hasChild(self.userID) {
                 self.maleOrFemale = 1
+                self.updateFields(mf: 1)
             }
             
             
@@ -47,27 +49,34 @@ class SettingsVC: UIViewController {
         }) { (error) in
             print(error.localizedDescription)
         }
-        if let mf = maleOrFemale {
-            updateFields(mf: mf)
-        }
     }
     
     func updateFields(mf: Int) {
         switch mf {
         case 0:
             ref.child("users").child("male").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
-                // Check if current user is male or female to save time digging thru db
-                print(snapshot)
-                
+                let socials = snapshot.childSnapshot(forPath: "socials").value as! NSDictionary
+                self.wechatField.text = socials.value(forKey: "wechat") as! String?
+                self.twitterField.text = socials.value(forKey: "twitter") as! String?
+                self.snapchatField.text = socials.value(forKey: "snapchat") as! String?
+                self.lineField.text = socials.value(forKey: "line") as! String?
+                self.instagramField.text = socials.value(forKey: "instagram") as! String?
+                self.kikField.text = socials.value(forKey: "kik") as! String?
+                self.nameField.text = snapshot.childSnapshot(forPath: "name").value as! String
                 }) { (error) in
                 print(error.localizedDescription)
             }
         case 1:
             ref.child("users").child("female").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
-                // Check if current user is male or female to save time digging thru db
-                print(snapshot)
-                
-            }) { (error) in
+                let socials = snapshot.childSnapshot(forPath: "socials").value as! NSDictionary
+                self.wechatField.text = socials.value(forKey: "wechat") as! String?
+                self.twitterField.text = socials.value(forKey: "twitter") as! String?
+                self.snapchatField.text = socials.value(forKey: "snapchat") as! String?
+                self.lineField.text = socials.value(forKey: "line") as! String?
+                self.instagramField.text = socials.value(forKey: "instagram") as! String?
+                self.kikField.text = socials.value(forKey: "kik") as! String?
+                self.nameField.text = snapshot.childSnapshot(forPath: "name").value as! String
+                }) { (error) in
                 print(error.localizedDescription)
             }
         default: break
