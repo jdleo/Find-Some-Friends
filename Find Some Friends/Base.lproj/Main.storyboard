@@ -587,9 +587,11 @@
                         <outlet property="snapchatLbl" destination="dPu-Bp-qcr" id="BNF-FX-3gX"/>
                         <outlet property="twitterLbl" destination="odP-nF-B9A" id="33n-El-Bad"/>
                         <outlet property="wechatLbl" destination="0VN-Q9-Npn" id="l9A-A0-xL2"/>
+                        <segue destination="L72-YS-0yv" kind="unwind" identifier="unwindToMain1" unwindAction="unwindToMainWithSegue:" id="AgE-Mc-crL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rEc-9h-2Uk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="L72-YS-0yv" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2779.7101449275365" y="-567.39130434782612"/>
         </scene>

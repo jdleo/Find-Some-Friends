@@ -95,6 +95,7 @@ class ProfileVC: UIViewController {
     }
     
     @IBAction func backBtn(_ sender: AnyObject) {
+        performSegue(withIdentifier: "unwindToMain1", sender: nil)
     }
     
 
