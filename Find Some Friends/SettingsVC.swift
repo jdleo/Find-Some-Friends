@@ -30,6 +30,9 @@ class SettingsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.bgView.backgroundColor = UIColor(patternImage: UIImage(named: "bg.png")!)
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SettingsVC.dismissKeyboard))
+        view.addGestureRecognizer(tap)
 
         // Do any additional setup after loading the view.
         ref.child("priority").observeSingleEvent(of: .value, with: { (snapshot) in
@@ -99,6 +102,11 @@ class SettingsVC: UIViewController {
     
     func updateFirebase(gender: String, data: [String:String]) {
         ref.child("users").child(gender).child(userID).child("socials").updateChildValues(data)
+    }
+    
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
 
 }

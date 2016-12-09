@@ -22,10 +22,12 @@ class Main1VC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
     @IBOutlet weak var collection: UICollectionView!
     
     var userID: String!
+    var maleFemale: Int?
     
     let reuse = "UserCell"
     
     let ref = FIRDatabase.database().reference().child("priority")
+    let base_ref = FIRDatabase.database().reference().child("users")
     let storage = FIRStorage.storage().reference(forURL: "gs://findsomefriends-65c41.appspot.com/profilepics/")
     var users = [User]()
     
@@ -37,6 +39,24 @@ class Main1VC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
         
         segmentControl.addTarget(self, action: #selector(Main1VC.segmentedControlValueChanged), for:.valueChanged)
         segmentControl.addTarget(self, action: #selector(Main1VC.segmentedControlValueChanged), for:.touchUpInside)
+        
+        //find out if male or female, then load credits lbl
+        ref.child("priority").observeSingleEvent(of: .value, with: { (snapshot) in
+            // Check if current user is male or female to save time digging thru db
+            if snapshot.childSnapshot(forPath: "male").hasChild(self.userID) {
+                self.maleFemale = 0
+                self.updateCredits(mf: 0)
+                
+            } else if snapshot.childSnapshot(forPath: "female").hasChild(self.userID) {
+                self.maleFemale = 1
+                self.updateCredits(mf: 1)
+            }
+            
+            
+            // ...
+        }) { (error) in
+            print(error.localizedDescription)
+        }
         
         loadUsers(gender: "all")
         
@@ -124,6 +144,26 @@ class Main1VC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
             // ...
         }) { (error) in
             print(error.localizedDescription)
+        }
+    }
+    
+    func updateCredits(mf: Int) {
+        switch mf {
+        case 0:
+            base_ref.child("male").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
+                let credits = snapshot.childSnapshot(forPath: "credits").value
+                self.creditsLbl.text = "\(credits!) Credits"
+            }) { (error) in
+                print(error.localizedDescription)
+            }
+        case 1:
+            base_ref.child("female").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
+                let credits = snapshot.childSnapshot(forPath: "credits").value
+                self.creditsLbl.text = "\(credits!) Credits"
+            }) { (error) in
+                print(error.localizedDescription)
+            }
+        default: break
         }
     }
     
