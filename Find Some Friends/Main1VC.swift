@@ -11,8 +11,9 @@ import Firebase
 import FirebaseStorage
 import FirebaseDatabase
 import Foundation
+import NVActivityIndicatorView
 
-class Main1VC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class Main1VC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, NVActivityIndicatorViewable {
     
     @IBOutlet weak var creditsLbl: UILabel!
     @IBOutlet weak var segmentControl: UISegmentedControl!
@@ -20,6 +21,8 @@ class Main1VC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
     
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var collection: UICollectionView!
+    
+    let imageCache = NSCache<NSString, UIImage>()
     
     var userID: String!
     var maleFemale: Int?
@@ -122,27 +125,43 @@ class Main1VC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
     }
     
     func loadUsers(gender: String) {
+        let size = CGSize(width: 70, height:70)
+        
+        startAnimating(size, message: "Loading...", type: NVActivityIndicatorType(rawValue: 30)!)
+        
         ref.child(gender).observeSingleEvent(of: .value, with: { (snapshot) in
-            self.users = []
             // Get user value
+            self.users = []
             for snap in snapshot.children.allObjects as! [FIRDataSnapshot]{
                 let r1 = self.storage.child(snap.key)
-                r1.data(withMaxSize: 1 * 1024 * 1024, completion: { (data, error) in
-                    if error != nil {
-                        print(error?.localizedDescription)
-                    } else {
-                        let user = User(uid: snap.key, profilePic: UIImage(data: data!)!, time: snap.value as! TimeInterval)
-                        
-                        self.users.append(user)
-                        //self.users.sort(by: {$0.time > $1.time})
-                        self.users.shuffle()
-                        self.collection.reloadData()
-                    }
-                })
+                if let img = self.imageCache.object(forKey: snap.key as NSString) {
+                    let user = User(uid: snap.key, profilePic: img, time: snap.value as! TimeInterval)
+                    self.users.append(user)
+                    self.users.shuffle()
+                    self.collection.reloadData()
+                    self.stopAnimating()
+                } else {
+                    r1.data(withMaxSize: 1 * 1024 * 1024, completion: { (data, error) in
+                        if error != nil {
+                            print(error?.localizedDescription)
+                        } else {
+                            let user = User(uid: snap.key, profilePic: UIImage(data: data!)!, time: snap.value as! TimeInterval)
+                            self.users.append(user)
+                            self.imageCache.setObject(UIImage(data:data!)!, forKey: snap.key as NSString)
+                            self.users.shuffle()
+                            self.collection.reloadData()
+                            self.stopAnimating()
+                            
+                            
+                            
+                        }
+                    })
+                }
                 
             }
+            
             // ...
-        }) { (error) in
+}) { (error) in
             print(error.localizedDescription)
         }
     }
