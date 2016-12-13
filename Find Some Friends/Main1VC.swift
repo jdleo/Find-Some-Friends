@@ -44,7 +44,7 @@ class Main1VC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
         segmentControl.addTarget(self, action: #selector(Main1VC.segmentedControlValueChanged), for:.touchUpInside)
         
         //find out if male or female, then load credits lbl
-        ref.child("priority").observeSingleEvent(of: .value, with: { (snapshot) in
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
             // Check if current user is male or female to save time digging thru db
             if snapshot.childSnapshot(forPath: "male").hasChild(self.userID) {
                 self.maleFemale = 0
@@ -86,6 +86,7 @@ class Main1VC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
         let currentUser = users[indexPath.item]
         cell.profileImg.image = currentUser.profilePic
         return cell
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -125,13 +126,12 @@ class Main1VC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
     }
     
     func loadUsers(gender: String) {
-        let size = CGSize(width: 70, height:70)
-        
-        startAnimating(size, message: "Loading...", type: NVActivityIndicatorType(rawValue: 30)!)
         
         ref.child(gender).observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
             self.users = []
+            
+            self.showSpinner()
             for snap in snapshot.children.allObjects as! [FIRDataSnapshot]{
                 let r1 = self.storage.child(snap.key)
                 if let img = self.imageCache.object(forKey: snap.key as NSString) {
@@ -139,7 +139,6 @@ class Main1VC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
                     self.users.append(user)
                     self.users.shuffle()
                     self.collection.reloadData()
-                    self.stopAnimating()
                 } else {
                     r1.data(withMaxSize: 1 * 1024 * 1024, completion: { (data, error) in
                         if error != nil {
@@ -150,7 +149,6 @@ class Main1VC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
                             self.imageCache.setObject(UIImage(data:data!)!, forKey: snap.key as NSString)
                             self.users.shuffle()
                             self.collection.reloadData()
-                            self.stopAnimating()
                             
                             
                             
@@ -184,6 +182,19 @@ class Main1VC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
             }
         default: break
         }
+    }
+    
+    func showSpinner() {
+        let size = CGSize(width: 70, height:70)
+        
+        startAnimating(size, message: "Loading...", type: NVActivityIndicatorType(rawValue: 30)!)
+        perform(#selector(delayedStopActivity),
+                with: nil,
+                afterDelay: 3)
+    }
+    
+    func delayedStopActivity() {
+        stopAnimating()
     }
     
 
