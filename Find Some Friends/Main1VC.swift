@@ -84,7 +84,20 @@ class Main1VC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuse, for: indexPath as IndexPath) as! UserCell
         let currentUser = users[indexPath.item]
-        cell.profileImg.image = currentUser.profilePic
+        let r1 = self.storage.child(currentUser.uid)
+        if let img = self.imageCache.object(forKey: currentUser.uid as NSString) {
+            cell.profileImg.image = img
+            } else {
+            r1.data(withMaxSize: 1 * 1024 * 1024, completion: { (data, error) in
+                if error != nil {
+                    print(error?.localizedDescription)
+                } else {
+                    cell.profileImg.image = UIImage(data: data!)!
+                    self.imageCache.setObject(UIImage(data:data!)!, forKey: currentUser.uid as NSString)
+                    }
+            })
+        }
+
         return cell
         
     }
@@ -133,32 +146,12 @@ class Main1VC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
             
             self.showSpinner()
             for snap in snapshot.children.allObjects as! [FIRDataSnapshot]{
-                let r1 = self.storage.child(snap.key)
-                if let img = self.imageCache.object(forKey: snap.key as NSString) {
-                    let user = User(uid: snap.key, profilePic: img, time: snap.value as! TimeInterval)
+                    let user = User(uid: snap.key, time: snap.value! as! TimeInterval)
                     self.users.append(user)
-                    self.users.shuffle()
-                    self.collection.reloadData()
-                } else {
-                    r1.data(withMaxSize: 1 * 1024 * 1024, completion: { (data, error) in
-                        if error != nil {
-                            print(error?.localizedDescription)
-                        } else {
-                            let user = User(uid: snap.key, profilePic: UIImage(data: data!)!, time: snap.value as! TimeInterval)
-                            self.users.append(user)
-                            self.imageCache.setObject(UIImage(data:data!)!, forKey: snap.key as NSString)
-                            self.users.shuffle()
-                            self.collection.reloadData()
-                            
-                            
-                            
-                        }
-                    })
-                }
-                
             }
             
-            // ...
+           self.users.shuffle()
+            self.collection.reloadData()
 }) { (error) in
             print(error.localizedDescription)
         }

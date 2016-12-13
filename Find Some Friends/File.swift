@@ -10,24 +10,18 @@ import UIKit
 
 class User {
     private var _uid: String
-    private var _profilePic: UIImage
     private var _time: TimeInterval
     
     var uid: String {
         return _uid
     }
     
-    var profilePic: UIImage {
-        return _profilePic
-    }
-    
     var time: TimeInterval {
         return _time
     }
     
-    init(uid: String, profilePic: UIImage, time: TimeInterval) {
+    init(uid: String, time: TimeInterval) {
         self._uid = uid
-        self._profilePic = profilePic
         self._time = time
     }
     
