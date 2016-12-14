@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4558FF921E00BBB400F46750 /* black-label-for-discounts.png in Resources */ = {isa = PBXBuildFile; fileRef = 4558FF911E00BBB400F46750 /* black-label-for-discounts.png */; };
 		45CABC2D1DF38B6C000207D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CABC2C1DF38B6C000207D0 /* AppDelegate.swift */; };
 		45CABC2F1DF38B6C000207D0 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CABC2E1DF38B6C000207D0 /* LoginVC.swift */; };
 		45CABC321DF38B6C000207D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45CABC301DF38B6C000207D0 /* Main.storyboard */; };
@@ -49,6 +50,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4558FF911E00BBB400F46750 /* black-label-for-discounts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "black-label-for-discounts.png"; sourceTree = "<group>"; };
 		45CABC291DF38B6C000207D0 /* Find Some Friends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Find Some Friends.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45CABC2C1DF38B6C000207D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45CABC2E1DF38B6C000207D0 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				45F8D9481DF6289900D6BB1A /* 1481000260_social_twitter.png */,
 				45F8D9491DF6289900D6BB1A /* 1481000282_social_line.png */,
 				45F8D9521DF650AC00D6BB1A /* save-disk.png */,
+				4558FF911E00BBB400F46750 /* black-label-for-discounts.png */,
 				45CABC611DF3B160000207D0 /* smile.png */,
 				45CABC551DF39516000207D0 /* mail.png */,
 				45CABC631DF3F611000207D0 /* bg.png */,
@@ -309,6 +312,7 @@
 				45F8D9531DF650AC00D6BB1A /* save-disk.png in Resources */,
 				45F8D94A1DF6289900D6BB1A /* 1481000209_social_kik.png in Resources */,
 				45F8D94D1DF6289900D6BB1A /* 1481000251_social_we_chat.png in Resources */,
+				4558FF921E00BBB400F46750 /* black-label-for-discounts.png in Resources */,
 				45CABC521DF39477000207D0 /* padlock.png in Resources */,
 				45F8D94E1DF6289900D6BB1A /* 1481000260_social_twitter.png in Resources */,
 				45CABC501DF392F7000207D0 /* FSFBanner.png in Resources */,

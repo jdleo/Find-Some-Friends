@@ -620,11 +620,23 @@
                                             <action selector="saveBtn:" destination="PyU-6Y-ayS" eventType="touchUpInside" id="KpW-C0-lM4"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7j-TT-Ep5">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="NPJ-fs-8Xs"/>
+                                            <constraint firstAttribute="height" constant="40" id="boy-oK-hSZ"/>
+                                        </constraints>
+                                        <state key="normal" image="black-label-for-discounts.png"/>
+                                        <connections>
+                                            <action selector="promoBtn:" destination="PyU-6Y-ayS" eventType="touchUpInside" id="V6h-8j-tof"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.10980392160000001" green="0.72549019609999998" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="q7j-TT-Ep5" secondAttribute="bottom" constant="15" id="179-wi-zJB"/>
                                     <constraint firstAttribute="height" constant="100" id="4u2-Od-PvE"/>
                                     <constraint firstItem="IT9-aM-rLo" firstAttribute="leading" secondItem="DXP-Ka-R1T" secondAttribute="leading" constant="15" id="lgO-D8-U0u"/>
+                                    <constraint firstAttribute="trailing" secondItem="q7j-TT-Ep5" secondAttribute="trailing" constant="15" id="mW7-MU-jrQ"/>
                                     <constraint firstAttribute="bottom" secondItem="IT9-aM-rLo" secondAttribute="bottom" constant="15" id="uv1-PI-kFR"/>
                                 </constraints>
                             </view>
@@ -799,6 +811,7 @@
         <image name="FSFBanner.png" width="944" height="186"/>
         <image name="ascending-stairs-signal.png" width="128" height="128"/>
         <image name="back-button.png" width="64" height="64"/>
+        <image name="black-label-for-discounts.png" width="64" height="64"/>
         <image name="camera-settings-cogwheel.png" width="128" height="128"/>
         <image name="closed-lock.png" width="64" height="64"/>
         <image name="coins-stack.png" width="128" height="128"/>
@@ -807,6 +820,6 @@
         <image name="smile.png" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Utc-Ta-aTb"/>
+        <segue reference="jYZ-HK-G5L"/>
     </inferredMetricsTieBreakers>
 </document>

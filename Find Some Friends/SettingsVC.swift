@@ -9,12 +9,15 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import Foundation
 
 class SettingsVC: UIViewController {
     
     var userID: String!
     
     var maleFemale: Int!
+    
+    let defaults = UserDefaults.standard
     
     let ref = FIRDatabase.database().reference()
 
@@ -108,5 +111,69 @@ class SettingsVC: UIViewController {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
+    
+    @IBAction func promoBtn(_ sender: AnyObject) {
+        let alertController = UIAlertController(title: "Promo Code", message: "", preferredStyle: .alert)
+        
+        let doneAction = UIAlertAction(title: "Done", style: .default, handler: {
+            alert -> Void in
+            
+            let firstTextField = alertController.textFields![0] as UITextField
+            if let code = firstTextField.text {
+                self.ref.child("promoCodes").child(code).observeSingleEvent(of: .value, with: { (snapshot) in
+                    if let credits = snapshot.value {
+                        if credits is NSNull {
+                            self.showAlert(msg: "Code is either invalid or expired", title: "Oops")
+                        } else {
+                            let redeemed = self.defaults.bool(forKey: code)
+                            if redeemed {
+                                self.showAlert(msg: "Already redeemed code '\(code)'", title: "Oops")
+                            } else {
+                                switch self.maleFemale {
+                                case 0:
+                                    
+                                self.ref.child("users").child("male").child(self.userID).child("credits").observeSingleEvent(of: .value, with: { (snap) in
+                                    let currentCredits = snap.value! as! Int
+                                    let promoCredits = credits as! Int
+                                    let newCredits = currentCredits + promoCredits
+                                    self.ref.child("users").child("male").child(self.userID).child("credits").setValue(newCredits)
+                                    self.defaults.set(true, forKey: code)
+                                    self.showAlert(msg: "\(promoCredits) credits have been added to your account. You now have \(newCredits) credits!", title: "Yay! :D")
+                                })
+                                case 1:
+                                    
+                                self.ref.child("users").child("female").child(self.userID).child("credits").observeSingleEvent(of: .value, with: { (snap) in
+                                        let currentCredits = snap.value! as! Int
+                                        let promoCredits = credits as! Int
+                                        let newCredits = currentCredits + promoCredits
+                                        self.ref.child("users").child("female").child(self.userID).child("credits").setValue(newCredits)
+                                        self.defaults.set(true, forKey: code)
+                                        self.showAlert(msg: "\(promoCredits) credits have been added to your account. You now have \(newCredits) credits!", title: "Yay! :D")
+                                    })
+                                default: break
+                                }
+                            }
+                        }
+                    }
+                })
+            }
+        })
+        
+        alertController.addTextField { (textField : UITextField!) -> Void in
+            textField.placeholder = "Enter Promo Code"
+        }
+        
+        alertController.addAction(doneAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+        
+        }
+    
+    func showAlert(msg: String, title: String) {
+        let aC = UIAlertController(title: title, message: msg, preferredStyle: UIAlertControllerStyle.alert)
+        aC.addAction(UIAlertAction(title: "Okay!", style: UIAlertActionStyle.cancel, handler: nil))
+        present(aC, animated: true, completion: nil)
+    }
+    
 
 }
