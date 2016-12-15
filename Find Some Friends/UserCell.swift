@@ -11,5 +11,10 @@ import UIKit
 class UserCell: UICollectionViewCell {
     @IBOutlet weak var profileImg: UIImageView!
     
+    override func prepareForReuse() {
+        profileImg.image = nil
+        super.prepareForReuse()
+    }
+    
     
 }
