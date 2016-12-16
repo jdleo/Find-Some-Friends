@@ -292,6 +292,23 @@ class Main1VC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
             self.ref.child(gender).child(uid).setValue(currentTime)
             self.ref.child("all").child(uid).setValue(currentTime)
             
+            //then show the user their newly boosted profile
+            
+            switch self.maleFemale {
+            case 0:
+                //self.loadUsers(gender: "male", sort: "recent")
+                self.segmentControl.selectedSegmentIndex = 1
+                self.sortControl.selectedSegmentIndex = 1
+                self.loadUsers(gender: "male", sort: "recent")
+            case 1:
+                //self.loadUsers(gender: "female", sort: "recent")
+                self.segmentControl.selectedSegmentIndex = 2
+                self.sortControl.selectedSegmentIndex = 1
+                self.loadUsers(gender: "female", sort: "recent")
+                
+            default: break
+                
+            }
             
         }) { (error) in
             self.showAlert(ttl: "Oops", msg: error.localizedDescription, btn: "Okay :(")
