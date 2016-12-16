@@ -17,6 +17,7 @@ class Main1VC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
     
     @IBOutlet weak var creditsLbl: UILabel!
     @IBOutlet weak var segmentControl: UISegmentedControl!
+    @IBOutlet weak var sortControl: UISegmentedControl!
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var collection: UICollectionView!
     
@@ -39,9 +40,10 @@ class Main1VC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
         self.bgView.backgroundColor = UIColor(patternImage: UIImage(named: "bg.png")!)
         collection.delegate = self
         collection.dataSource = self
-        
         segmentControl.addTarget(self, action: #selector(Main1VC.segmentedControlValueChanged), for:.valueChanged)
         segmentControl.addTarget(self, action: #selector(Main1VC.segmentedControlValueChanged), for:.touchUpInside)
+        sortControl.addTarget(self, action: #selector(Main1VC.sortControlValueChanged), for: .valueChanged)
+        sortControl.addTarget(self, action: #selector(Main1VC.sortControlValueChanged), for: .touchUpInside)
         
         //find out if male or female, then load credits lbl
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
@@ -61,7 +63,7 @@ class Main1VC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
             print(error.localizedDescription)
         }
         
-        loadUsers(gender: "all")
+        loadUsers(gender: "all", sort: "random")
         
     }
     
@@ -143,23 +145,71 @@ class Main1VC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
     func segmentedControlValueChanged(segment: UISegmentedControl) {
         if segment.selectedSegmentIndex == 0 {
             //all
-            print("load all")
-            loadUsers(gender: "all")
+            if (sortControl.selectedSegmentIndex == 0) {
+                print("all/random")
+               loadUsers(gender: "all", sort: "random")
+            } else {
+                print("all/recent")
+                loadUsers(gender: "all", sort: "recent")
+            }
             
         } else if segment.selectedSegmentIndex == 1 {
             //male
-            print("load male")
-            loadUsers(gender: "male")
+            if (sortControl.selectedSegmentIndex == 0) {
+                print("male/random")
+                loadUsers(gender: "male", sort: "random")
+            } else {
+                print("male/recent")
+                loadUsers(gender: "male", sort: "recent")
+            }
             
         } else if segment.selectedSegmentIndex == 2 {
             //female
-            loadUsers(gender: "female")
+            if (sortControl.selectedSegmentIndex == 0) {
+                print("female/random")
+                loadUsers(gender: "female", sort: "random")
+            } else {
+                print("female/recent")
+                loadUsers(gender: "female", sort: "recent")
+            }
             
         }
         
     }
     
-    func loadUsers(gender: String) {
+    func sortControlValueChanged(segment: UISegmentedControl) {
+        if segment.selectedSegmentIndex == 0 {
+            //random, aka default
+            
+            if (segmentControl.selectedSegmentIndex == 0) {
+                print("all/random")
+                loadUsers(gender: "all", sort: "random")
+            } else if (segmentControl.selectedSegmentIndex == 1) {
+                print("male/random")
+                loadUsers(gender: "male", sort: "random")
+            } else {
+                print("female/random")
+                loadUsers(gender: "female", sort: "random")
+            }
+            
+        } else if segment.selectedSegmentIndex == 1 {
+            //most recent
+            if (segmentControl.selectedSegmentIndex == 0) {
+                print("all/recent")
+                loadUsers(gender: "all", sort: "recent")
+            } else if (segmentControl.selectedSegmentIndex == 1) {
+                print("male/recent")
+                loadUsers(gender: "male", sort: "recent")
+            } else {
+                print("female/recent")
+                loadUsers(gender: "female", sort: "recent")
+            }
+            
+        }
+        
+    }
+    
+    func loadUsers(gender: String, sort: String) {
         
         ref.child(gender).observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
@@ -206,7 +256,7 @@ class Main1VC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
         startAnimating(size, message: "Loading...", type: NVActivityIndicatorType(rawValue: 30)!)
         perform(#selector(delayedStopActivity),
                 with: nil,
-                afterDelay: 3)
+                afterDelay: 2)
     }
     
     func delayedStopActivity() {

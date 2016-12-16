@@ -330,18 +330,30 @@
                                             </label>
                                         </subviews>
                                     </stackView>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jxu-S2-9Gj">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="165" id="FNq-9O-zfh"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="Random"/>
+                                            <segment title="Recent"/>
+                                        </segments>
+                                        <color key="tintColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </segmentedControl>
                                 </subviews>
                                 <color key="backgroundColor" red="0.10980392160000001" green="0.72549019609999998" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="jxu-S2-9Gj" firstAttribute="centerX" secondItem="5o7-BC-oO9" secondAttribute="centerX" id="6et-Xs-p6y"/>
                                     <constraint firstAttribute="trailing" secondItem="shy-GJ-MGA" secondAttribute="trailing" constant="8" id="GXB-Od-XKu"/>
                                     <constraint firstItem="tc8-Ni-k0d" firstAttribute="centerX" secondItem="5o7-BC-oO9" secondAttribute="centerX" id="Gdu-Wk-FiS"/>
                                     <constraint firstItem="fyW-cV-wxJ" firstAttribute="centerX" secondItem="5o7-BC-oO9" secondAttribute="centerX" id="OBw-Yy-fHZ"/>
                                     <constraint firstAttribute="bottom" secondItem="shy-GJ-MGA" secondAttribute="bottom" constant="8" id="W6F-fz-TIA"/>
-                                    <constraint firstItem="fyW-cV-wxJ" firstAttribute="top" secondItem="tc8-Ni-k0d" secondAttribute="bottom" constant="10" id="WWR-uj-jq7"/>
                                     <constraint firstAttribute="bottom" secondItem="jCZ-ZP-R7a" secondAttribute="bottom" constant="8" id="XVD-Px-g4f"/>
                                     <constraint firstAttribute="bottom" secondItem="fyW-cV-wxJ" secondAttribute="bottom" constant="14" id="ZpQ-Qj-Luj"/>
-                                    <constraint firstAttribute="height" constant="100" id="gw5-gw-sMv"/>
                                     <constraint firstItem="jCZ-ZP-R7a" firstAttribute="leading" secondItem="5o7-BC-oO9" secondAttribute="leading" constant="8" id="mbz-Kh-f4O"/>
+                                    <constraint firstItem="jxu-S2-9Gj" firstAttribute="top" secondItem="tc8-Ni-k0d" secondAttribute="bottom" constant="15" id="r5Z-Qs-hWv"/>
+                                    <constraint firstItem="fyW-cV-wxJ" firstAttribute="top" secondItem="jxu-S2-9Gj" secondAttribute="bottom" constant="8" id="wdT-K7-mkf"/>
+                                    <constraint firstAttribute="height" constant="150" id="yFJ-cN-u1p"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="NO"/>
@@ -357,7 +369,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <view key="backgroundView" contentMode="scaleToFill" id="3eR-Vd-Lbp">
-                                            <rect key="frame" x="0.0" y="0.0" width="359" height="551"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="359" height="501"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </view>
                                         <cells>
@@ -429,6 +441,7 @@
                         <outlet property="collection" destination="KgV-gB-hU7" id="M16-UO-EVU"/>
                         <outlet property="creditsLbl" destination="K5v-00-2yy" id="EF5-b9-uaB"/>
                         <outlet property="segmentControl" destination="fyW-cV-wxJ" id="B8d-EQ-LfY"/>
+                        <outlet property="sortControl" destination="jxu-S2-9Gj" id="Amu-vg-1Nu"/>
                         <segue destination="PyU-6Y-ayS" kind="show" identifier="goToSettings" id="kEM-WP-IyQ"/>
                         <segue destination="OFf-gS-Mr0" kind="show" identifier="goToProfile" id="eBh-T9-iaM"/>
                     </connections>
