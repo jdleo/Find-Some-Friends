@@ -290,6 +290,7 @@ class Main1VC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
         
             //then update priority timestamp
             self.ref.child(gender).child(uid).setValue(currentTime)
+            self.ref.child("all").child(uid).setValue(currentTime)
             
             
         }) { (error) in
