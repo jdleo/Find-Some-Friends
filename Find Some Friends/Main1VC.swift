@@ -63,7 +63,7 @@ class Main1VC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
             print(error.localizedDescription)
         }
         
-        loadUsers(gender: "all", sort: "random")
+        loadUsers(gender: "all", sort: "recent")
         
     }
     
@@ -221,8 +221,19 @@ class Main1VC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
                     self.users.append(user)
             }
             
+            switch sort {
+            case "recent":
+                self.users.sort(by: {$0.time > $1.time})
+                self.collection.reloadData()
+            case "random":
+                self.users.shuffle()
+                self.collection.reloadData()
+            default:break
+            }
+           /**
            self.users.shuffle()
-            self.collection.reloadData()
+            self.collection.reloadData() **/
+            
 }) { (error) in
             print(error.localizedDescription)
         }
