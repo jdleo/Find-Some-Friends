@@ -16,6 +16,7 @@ class ProfileVC: UIViewController {
     var theirID: String!
     let storage = FIRStorage.storage().reference(forURL: "gs://findsomefriends-65c41.appspot.com/profilepics/")
     let ref = FIRDatabase.database().reference()
+    let reportRef = FIRDatabase.database().reference().child("reports")
     
     @IBOutlet weak var twitterLbl: UILabel!
     @IBOutlet weak var instagramLbl: UILabel!
@@ -97,6 +98,53 @@ class ProfileVC: UIViewController {
     @IBAction func backBtn(_ sender: AnyObject) {
         performSegue(withIdentifier: "unwindToMain1", sender: nil)
     }
+    
+    @IBAction func reportBtn(_ sender: AnyObject) {
+        let actionSheet: UIAlertController = UIAlertController(title: "Report this user", message: "Select a reason for reporting, and I'll review the issue :)", preferredStyle: .actionSheet)
+        
+        let caseNumber = UUID().uuidString
+        
+        //Create and add the "Cancel" action
+        let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel) { action -> Void in
+            //Just dismiss the action sheet
+        }
+        actionSheet.addAction(cancelAction)
+        
+        //Create and add "Yes" action
+        let action1: UIAlertAction = UIAlertAction(title: "Inappropriate picture", style: .default) { action -> Void in
+            self.uploadReport(id: caseNumber, reason: "nudes", uid: self.theirID)
+            self.showAlert(ttl: "Done!", msg: "I'll look into it, thanks!")
+        }
+        
+        
+        let action2: UIAlertAction = UIAlertAction(title: "Harassment", style: .default) { action -> Void in
+            self.uploadReport(id: caseNumber, reason: "harassment", uid: self.theirID)
+            self.showAlert(ttl: "Done!", msg: "Your report has been sent. I'll look into this. If any more problems come up, please email me at j@zaap.ws and use Case #\(caseNumber) for reference")
+        }
+        
+        let action3: UIAlertAction = UIAlertAction(title: "Other...", style: .default) { action -> Void in
+            self.uploadReport(id: caseNumber, reason: "other", uid: self.theirID)
+            self.showAlert(ttl: "Need more info!", msg: "Please shoot me an email at j@zaap.ws and we will get this resolved. Case #\(caseNumber) (Please use this for reference in email)")
+        }
+        
+        actionSheet.addAction(action1)
+        actionSheet.addAction(action2)
+        actionSheet.addAction(action3)
+        
+        self.present(actionSheet, animated: true, completion: nil)
+    }
+    
+    func showAlert(ttl: String, msg: String) {
+        let aC = UIAlertController(title: ttl, message: msg, preferredStyle: .alert)
+        aC.addAction(UIAlertAction(title: "Okay!", style: .cancel, handler: nil))
+        present(aC, animated: true, completion: nil)
+    }
+    
+    func uploadReport(id: String, reason: String, uid: String) {
+        let data = ["reason": reason, "uid": uid]
+        reportRef.child(id).updateChildValues(data)
+    }
+    
     
 
 

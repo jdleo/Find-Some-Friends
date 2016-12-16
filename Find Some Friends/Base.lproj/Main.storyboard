@@ -461,12 +461,24 @@
                                             <action selector="backBtn:" destination="OFf-gS-Mr0" eventType="touchUpInside" id="PZq-Tr-QkL"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfM-Gv-g7o">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="ba2-rb-ekI"/>
+                                            <constraint firstAttribute="height" constant="40" id="xVO-vO-Cs2"/>
+                                        </constraints>
+                                        <state key="normal" image="report-symbol.png"/>
+                                        <connections>
+                                            <action selector="reportBtn:" destination="OFf-gS-Mr0" eventType="touchUpInside" id="AwI-6j-Onk"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.10980392160000001" green="0.72549019609999998" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="yKz-g8-fvm" firstAttribute="leading" secondItem="UXF-zs-eMC" secondAttribute="leading" constant="8" id="Nle-N1-CgR"/>
                                     <constraint firstAttribute="bottom" secondItem="yKz-g8-fvm" secondAttribute="bottom" constant="8" id="Npu-E2-c6X"/>
+                                    <constraint firstAttribute="bottom" secondItem="jfM-Gv-g7o" secondAttribute="bottom" constant="8" id="PXL-Vq-0IL"/>
                                     <constraint firstAttribute="height" constant="100" id="cAX-CS-iuC"/>
+                                    <constraint firstAttribute="trailing" secondItem="jfM-Gv-g7o" secondAttribute="trailing" constant="8" id="dhQ-tO-zCG"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LP0-zM-Xxe">
@@ -816,6 +828,7 @@
         <image name="closed-lock.png" width="64" height="64"/>
         <image name="coins-stack.png" width="128" height="128"/>
         <image name="mail.png" width="64" height="64"/>
+        <image name="report-symbol.png" width="64" height="64"/>
         <image name="save-disk.png" width="64" height="64"/>
         <image name="smile.png" width="512" height="512"/>
     </resources>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4551A5FC1E03CCF400B91F43 /* report-symbol.png in Resources */ = {isa = PBXBuildFile; fileRef = 4551A5FB1E03CCF400B91F43 /* report-symbol.png */; };
 		4558FF921E00BBB400F46750 /* black-label-for-discounts.png in Resources */ = {isa = PBXBuildFile; fileRef = 4558FF911E00BBB400F46750 /* black-label-for-discounts.png */; };
 		45CABC2D1DF38B6C000207D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CABC2C1DF38B6C000207D0 /* AppDelegate.swift */; };
 		45CABC2F1DF38B6C000207D0 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CABC2E1DF38B6C000207D0 /* LoginVC.swift */; };
@@ -50,6 +51,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4551A5FB1E03CCF400B91F43 /* report-symbol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "report-symbol.png"; sourceTree = "<group>"; };
 		4558FF911E00BBB400F46750 /* black-label-for-discounts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "black-label-for-discounts.png"; sourceTree = "<group>"; };
 		45CABC291DF38B6C000207D0 /* Find Some Friends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Find Some Friends.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45CABC2C1DF38B6C000207D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 			children = (
 				45CABC691DF4C3AB000207D0 /* ascending-stairs-signal.png */,
 				45CABC6A1DF4C3AB000207D0 /* camera-settings-cogwheel.png */,
+				4551A5FB1E03CCF400B91F43 /* report-symbol.png */,
 				45CABC6B1DF4C3AB000207D0 /* coins-stack.png */,
 				45F8D9441DF6289900D6BB1A /* 1481000209_social_kik.png */,
 				45F8D9451DF6289900D6BB1A /* 1481000225_social_instagram.png */,
@@ -316,6 +319,7 @@
 				45CABC521DF39477000207D0 /* padlock.png in Resources */,
 				45F8D94E1DF6289900D6BB1A /* 1481000260_social_twitter.png in Resources */,
 				45CABC501DF392F7000207D0 /* FSFBanner.png in Resources */,
+				4551A5FC1E03CCF400B91F43 /* report-symbol.png in Resources */,
 				45CABC4C1DF38ED8000207D0 /* NotoSansUI-Regular.ttf in Resources */,
 				45CABC3F1DF38DB5000207D0 /* people.png in Resources */,
 				45CABC491DF38ED8000207D0 /* NotoSans-Bold.ttf in Resources */,
