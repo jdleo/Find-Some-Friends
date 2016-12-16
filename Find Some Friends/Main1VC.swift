@@ -17,15 +17,15 @@ class Main1VC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
     
     @IBOutlet weak var creditsLbl: UILabel!
     @IBOutlet weak var segmentControl: UISegmentedControl!
-    
-    
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var collection: UICollectionView!
     
     let imageCache = NSCache<NSString, UIImage>()
     
     var userID: String!
-    var maleFemale: Int?
+    var maleFemale = 9
+    
+    var myCredits: Int?
     
     let reuse = "UserCell"
     
@@ -114,10 +114,30 @@ class Main1VC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
     @IBAction func unwindToMain(segue: UIStoryboardSegue) {}
     
     @IBAction func boostBtn(_ sender: AnyObject) {
-        //temporary placeholder
-        let alert = UIAlertController(title: "Coming soon!", message: "You will be able to boost your profile using credits. Each user will get 3 credits every day, but right now, profiles will be randomly shuffled", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Okay!", style: UIAlertActionStyle.cancel, handler: nil))
-        present(alert, animated: true, completion: nil)
+        //adjust credits, then update priority timestamp
+        // theres a chance it doesnt have a value tho (for some reason) so we'll do if-let
+        if let creds = self.myCredits {
+            if creds >= 1 {
+                self.myCredits = (creds-1)
+                //check if male/female, then boost, also get current time for timestamp
+                let currentTime = NSDate().timeIntervalSince1970
+                switch maleFemale {
+                case 0:
+                    boost(gender: "male", uid: userID, currentTime: currentTime)
+                    updateCredits(mf: 0)
+                    showAlert(ttl: "Success!", msg: "Your profile has been boosted. You now have \(self.myCredits!) credits!", btn: "Thanks, okay!")
+                case 1:
+                    boost(gender: "female", uid: userID, currentTime: currentTime)
+                    updateCredits(mf: 0)
+                    showAlert(ttl: "Success!", msg: "Your profile has been boosted. You now have \(self.myCredits!) credits!", btn: "Thanks, okay!")
+                default: break
+                }
+                
+                
+            } else {
+                showAlert(ttl: "Oops!", msg: "You're all out of credits!", btn: "Okay :(")
+            }
+        }
     }
     
     func segmentedControlValueChanged(segment: UISegmentedControl) {
@@ -163,6 +183,7 @@ class Main1VC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
         case 0:
             base_ref.child("male").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
                 let credits = snapshot.childSnapshot(forPath: "credits").value
+                self.myCredits = credits as! Int?
                 self.creditsLbl.text = "\(credits!) Credits"
             }) { (error) in
                 print(error.localizedDescription)
@@ -170,6 +191,7 @@ class Main1VC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
         case 1:
             base_ref.child("female").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
                 let credits = snapshot.childSnapshot(forPath: "credits").value
+                self.myCredits = credits as! Int?
                 self.creditsLbl.text = "\(credits!) Credits"
             }) { (error) in
                 print(error.localizedDescription)
@@ -189,6 +211,30 @@ class Main1VC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
     
     func delayedStopActivity() {
         stopAnimating()
+    }
+    
+    func showAlert(ttl: String, msg: String, btn: String) {
+        let aC = UIAlertController(title: ttl, message: msg, preferredStyle: .alert)
+        aC.addAction(UIAlertAction(title: btn, style: .cancel, handler: nil))
+        present(aC, animated: true, completion: nil)
+    }
+    
+    func boost(gender: String, uid: String, currentTime: TimeInterval) {
+        //read credits first
+        base_ref.child(gender).child(uid).child("credits").observeSingleEvent(of: .value, with: { (snapshot) in
+            let creditsInDb = snapshot.value as! Int
+            let newCredits = (creditsInDb-1)
+            //then set new credit count
+            self.base_ref.child(gender).child(uid).child("credits").setValue(newCredits)
+        
+            //then update priority timestamp
+            self.ref.child(gender).child(uid).setValue(currentTime)
+            
+            
+        }) { (error) in
+            self.showAlert(ttl: "Oops", msg: error.localizedDescription, btn: "Okay :(")
+        }
+        
     }
     
 
